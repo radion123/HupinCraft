@@ -1,0 +1,1437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HupinCraft | Майнкрафт</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Free minecraft hosting to play with your friends. Get your own server in under a minute!" />
+<meta name="keywords" content="free minecraft servers, minecraft hosting, minecraft server, minecraft pe, minecraft pocket edition, rent minecraft server" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script src="/s/js/jquery-3.1.1.min.js"></script>
+<link href="/s/css/bootstrap-3.1.1.min.css" rel="stylesheet">
+<script src="/s/js/bootstrap-3.1.1.min.js"></script>
+<link href="/s/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/s/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<script>
+function esc(v) { if(v === null) return null; return v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+if (!Array.prototype.indexOf) { Array.prototype.indexOf = function(val) { return $.inArray(val, this); }; }
+if (!String.prototype.startsWith) { String.prototype.startsWith = function(searchString, position) { position = position || 0; return this.substr(position, searchString.length) === searchString; }; }
+var stateCredits = 0;
+</script>
+<div id="all">
+<div id="top" style="left:0;top:0;position:fixed;">
+<div style="margin:0 auto;padding:0 10px;max-width:1170px;overflow:visible;">
+<div class="fl"><a class="topLogo" href="/"><img src="/s/img/logo-dark.svg" style="width:180px;height:44px;padding-top:2px;"></a></div>
+<div class="fl topNav"><a href="/">Старт</a><a href="https://hupincraft.000webhostapp.com/tutorials.html">Учебники</a><a href="https://hupincraft.000webhostapp.com/pricing.html">Цены</a><a href="https://hupincraft.000webhostapp.com/support.html">Поддержка</a></div>
+<div class="fr topNav"><a href="https://hupincraft.000webhostapp.com/signup.html">Регистрация</a><a href="https://hupincraft.000webhostapp.com/login.html" class="active">Войти</a></div>
+</div>
+</div>
+<div style="margin:100px auto 30px auto;overflow:hidden;">
+<style>
+
+#createServer { margin:20px 0; border-radius:5px 5px 0 0; overflow:hidden; text-align:center; }
+.sectionHeadStatic { background-color:#fafafa; padding:30px 0; border:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5 !important; }
+.sectionHeadStatic p { margin:6px 0 10px 0; font-size:14px; }
+.sectionHead, .sectionHead-summary { background-color:#fafafa; padding:30px 0; border:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5 !important; }
+.sectionHead p, .sectionHead-summary p { margin:6px 0 10px 0; font-size:14px; }
+
+.details { margin:0 -30px -20px -30px; font-size:13px; }
+.details .feature { cursor:default !important; }
+.step { padding:40px; overflow:hidden; border-left:1px solid #d5d5d5; border-right:1px solid #d5d5d5; }
+
+.stepRegion { background-color:#fff; overflow:hidden; }
+.stepRegion button { border:none; }
+.stepRegion img { margin:40px; }
+.stepRegion h3 { font-size:26px; padding-bottom:40px; }
+
+.stepName { background-color:#fafafa; }
+.stepName #serverName { margin:20px 0; }
+
+.stepMemory, .stepCycle { height:188px; }
+.stepMemory .button, .stepCycle .button { padding:6px 0; width:72px; margin:0 20px 20px 0; border:1px solid #777; }
+.stepMod .button { padding:6px 0; width:116px; margin:0 20px 20px 0; border:1px solid #777; }
+
+.button { float:left; font-weight:400; cursor:pointer; white-space:nowrap; text-align:center; font-size:14px; border-radius:4px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.partFree .button { border-color:#a0d468; }
+.partPrem .button { border-color:#ffce54; }
+.partFree .button:hover, .partFree .button-selected { background-color:#a0d468; border-color:#a0d468; }
+.partPrem .button:hover, .partPrem .button-selected { background-color:#ffce54; border-color:#ffce54; }
+.partFree .button-active { box-shadow:inset 0 3px 5px rgba(0,0,0,.125); }
+.partPrem .button-active { box-shadow:inset 0 3px 5px rgba(0,0,0,.125); }
+
+.stepMod, .stepCycle, .stepMemory { overflow:hidden; }
+
+.bar-part { overflow:hidden; background-color:#f5f5f5; }
+
+.bar-top.partFree { background-color:#a0d468; border-color:#a0d468; color:#fff; }
+.bar-top.partPrem { background-color:#ffce54; border-color:#ffce54; color:#fff; }
+.bar-mid.partFree, .bar-mid.partFree .crow { border-color:#a0d468; }
+.bar-mid.partPrem, .bar-mid.partPrem .crow { border-color:#ffce54; }
+
+.bar-top { cursor:pointer; width:48%; border:1px solid #d5d5d5; border-radius:5px 5px 0 0; border-bottom:none; box-shadow:0 0 3px rgba(0, 0, 0, 0.08); overflow:hidden; font-weight:bold; font-size:18px; padding:20px 0; text-align:center; }
+.bar-mid { width:48%; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; background-color:#fff; padding:30px 20px; overflow:hidden; }
+.bar-mid .crow { border-top:1px solid #e5e5e5 !important; padding:20px 22px; text-align:center; font-weight:500; }
+.bar-mid .text-muted { font-weight:400; }
+.bar-last { border-bottom:1px solid #d5d5d5; border-radius:0 0 5px 5px; margin-bottom:7px; padding:0 20px 20px 20px; }
+
+.sectionLower { padding-top:40px; }
+.sectionLower .sectionHead { border-left-color:#a0d468; border-right-color:#ffce54; }
+
+.modSelected img { height:160px; border-radius:5px 5px 0 0; border-bottom:none; }
+.modSelected select { border-radius:0 0 4px 4px; }
+
+.stepMod { height:283px; }
+.stepMod.partFree img, .stepMod.partFree select { border:1px solid #a0d468; }
+.stepMod.partPrem img, .stepMod.partPrem select { border:1px solid #ffce54; }
+.modSelectedFree select { border:1px solid #a0d468; border-top:none !important; }
+.modSelectedPrem select { border:1px solid #ffce54; border-top:none !important; }
+.modSelect { width:229px; }
+
+#typeWarning { clear:both;text-align:left;padding-top:21px; display:none; }
+#memRequired { clear:both;text-align:left;padding:4px; }
+
+#selectNA, #selectEU { width:468px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+#selectNA:hover, #selectEU:hover { cursor:pointer; }
+
+#rentFooterFixed { z-index:8; position:fixed; bottom:0; left:0; }
+
+.rentFooter { height:81px; font-weight:400; border-top:1px solid #d5d5d5; width:100%; font-size:14px; overflow:hidden; }
+.rentFooter .fl { min-width:110px; padding-right:30px; }
+.rentFooter b { display:block; margin-top:10px; font-weight:600; }
+.rentFooter p { margin:0 20px 10px 0; }
+.rentFooter #footerType { margin-right:0 !important; }
+.rentFooter .fl > p { position:absolute; }
+.rentFooter .c940 { padding:10px 25px; overflow:hidden; }
+.rentFooter h3 { text-align:center; margin-bottom:20px; }
+
+.stepSummary { text-align:left; background-color:#fff; overflow:hidden; border:1px solid #d5d5d5; border-top:none; border-radius:0 0 5px 5px; margin-bottom:20px; }
+.stepSummaryInner { height:443px; }
+.footer-text { width:48%; padding:0 10px; text-align:left; font-style:italic; }
+
+.stepFinal { padding:30px 0 20px 0; text-align:center; }
+.stepFinal p { margin:23px 0; font-size:24px; }
+
+#finalProgress { width:500px; margin:65px auto 0 auto; }
+#finalProgress .progress { margin:25px 0 8px 0; }
+#progressInfo { height:111px; }
+#progressInfo h2 { margin-bottom:21px; }
+#progressInfoLower { margin-top:17px; }
+#progressInfo p, #progressInfoLower { font-weight:500; }
+#paymentSecure { visibility: hidden; }
+
+#startServerFree { color:#a0d468; border-color:#a0d468; }
+#startServerFree:hover, #startServerFree:active, #startServerFree:focus { color:#fff; border-color:#a0d468; background-color:#a0d468; }
+#startServerPrem { color:#ffce54; border-color:#ffce54; }
+#startServerPrem:hover, #startServerPrem:active, #startServerPrem:focus { color:#fff; border-color:#ffce54; background-color:#ffce54; }
+
+.start-disabled { opacity:0.8; cursor:default; color:#c1c1c1 !important; border-color:#c1c1c1 !important; background-color:transparent !important; box-shadow:none !important;  }
+.button-disabled { background-color:#fff !important; color:#777 !important; border-color:#c1c1c1 !important; cursor:not-allowed !important; }
+
+.selectHostname { cursor:pointer; }
+.hostnameFeedbackIcon { position:absolute; margin-left: 719px; margin-top: -40px; font-size: 27px; display:none; }
+
+#finalError { color:#b94a48; margin:160px 0; font-weight:600; }
+#autoRenewBox { margin:20px 0; font-size:16px; }
+#autoRenewBox .autoRenewTxtLeft { display:inline-block; width:140px; text-align:right; margin-right:15px; }
+#autoRenewBox .autoRenewTxtRight { display:inline-block; width:140px; text-align:left; margin-left:15px; }
+
+.modVersion { padding-right:0 !important; padding-left:6px !important; }
+
+.grayed { opacity:0.6; }
+.grayed .button { background-color:#fff !important; border-color:#c1c1c1 !important; }
+.grayed .button:hover { background-color:#c1c1c1 !important; }
+.grayed select, .grayed img { border-color:#c1c1c1 !important; }
+.bar-top.grayed { background-color:#c1c1c1 !important; }
+.grayed img { filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); filter: gray; -webkit-filter: grayscale(1); }
+
+</style>
+
+<div class="c940">
+<h1 class="c rentActive">Создать сервер майнкрафт</h1>
+<div class="rentActive" id="createServer">
+<div id="partOptions">
+<img src="/s/img/mc-logo.gif">
+
+<div class="sectionHeadStatic" style="border-bottom:none !important;border-left:1px solid #d5d5d5 !important;border-right:1px solid #d5d5d5 !important;padding:30px 0 10px 0;">
+<h3>Ваш домен</h3>
+<p>Выбрать имя, которое будет использоваться для подключения к серверу.</p>
+<div style="width:460px; margin:30px auto 0 auto">
+
+<div class="input-group">
+<input style="padding:0 15px;height:42px;" id="serverName" class="form-control" maxlength="40" type="text">
+<div class="input-group-btn">
+<button id="selectHostnameBtn" type="button" class="btn btn-default dropdown-toggle" style="padding:10px 0;width:130px;" data-toggle="dropdown">.<span data-value="hupincraft.ru" id="selectedHostname">hupincraft.ru</span> <i class="fa fa-angle-down"></i></button>
+<ul class="dropdown-menu pull-right">
+<li><a data-value="hupincraft.ru" class="selectHostname">hupincraft.ru</a></li><li><a data-value=".ru" class="selectHostname">ru</a></li><li><a data-value="mygs.co" class="selectHostname">mygs.co</a></li><li><a data-value="my-serv.com" class="selectHostname">my-serv.com</a></li><li><a data-value="mcserv.me" class="selectHostname">mcserv.me</a></li><li><a data-value="mcpro.io" class="selectHostname">mcpro.io</a></li><li><a data-value="g-s.nu" class="selectHostname">g-s.nu</a></li><li><a data-value="serv.nu" class="selectHostname">serv.nu</a></li><li><a data-value="myserver.gs" class="selectHostname">myserver.gs</a></li><li><a data-value="serv.gs" class="selectHostname">serv.gs</a></li><li><a data-value="mcnetwork.me" class="selectHostname">mcnetwork.me</a></li><li><a data-value="1337srv.com" class="selectHostname">1337srv.com</a></li></ul>
+</div>
+</div>
+</div>
+<div class="hostnameFeedbackIcon" id="hostnameTick" style="color:#3c763d;"><i class="fa fa-check"></i></div>
+<div class="hostnameFeedbackIcon" id="hostnameCross" style="color:#a94442;"><i class="fa fa-times"></i></div>
+<p id="hostnameFeedback" style="visibility:hidden;" class="postRet">&nbsp;</p>
+</div>
+
+<div class="sectionHeadStatic" style="border-top:none;padding-top:0;border-left:1px solid #d5d5d5 !important;border-right:1px solid #d5d5d5 !important;"><h3>Выбрать локацию</h3><p>Где должен размещаться ваш сервер?</p></div>
+<div class="step" style="border-bottom:1px solid #d5d5d5;border-radius:0 0 4px 4px;padding:0;">
+<div class="stepRegion">
+<div id="selectNA" class="fl"><img src="/s/img/map-na-180.png"><br><h3>Северная Америка</h3></div>
+<div id="selectEU" class="fr"><img src="/s/img/map-eu-180.png"><br><h3>Европа</h3></div>
+</div>
+</div>
+
+<div class="sectionLower">
+<div class="bar-part">
+<div class="bar-top fl partFree">Бесплатно</div>
+<div class="bar-top fr partPrem">Премиум</div>
+</div>
+<div class="bar-part stepPackage">
+<div class="bar-mid fl partFree" style="padding:20px;"></div>
+<div class="bar-mid fr partPrem" style="padding:20px;"></div>
+</div>
+
+<div class="sectionHead"><h3>Выберите тип</h3><p>Некоторые типы игр требуют больше памяти.</p></div>
+<div class="bar-part">
+<div class="bar-mid fl stepMod partFree">
+<select id="modSelectFree" size="10" class="fl modSelect form-control">
+<option data-img="vanilla" value="Vanilla">Ваниль</option><option data-img="vanilla-snapshot" value="Vanilla Snapshot">Ваниль</option><option data-img="craftbukkit" value="CraftBukkit">CraftBukkit</option><option data-img="spigot" value="Spigot">Spigot</option><option data-img="paper-spigot" value="Paper Spigot">Paper Spigot</option></select>
+<div class="fr modSelected modSelectedFree">
+<img src="/s/img/mods/vanilla.png">
+<select id="modVersionFree" class="modVersion form-control"></select>
+</div>
+</div>
+<div class="bar-mid fr stepMod partPrem">
+<select id="modSelectPrem" size="10" class="fl modSelect form-control">
+<option data-img="vanilla" value="Vanilla">Vanilla</option><option data-img="vanilla-snapshot" value="Vanilla Snapshot">Vanilla Snapshot</option><option data-img="craftbukkit" value="CraftBukkit">CraftBukkit</option><option data-img="spigot" value="Spigot">Spigot</option><option data-img="paper-spigot" value="Paper Spigot">Paper Spigot</option><option data-img="forge" value="Forge">Forge</option><option data-img="cauldron" value="Cauldron">Cauldron</option><option data-img="tekkit" value="Tekkit">Tekkit</option><option data-img="tekkit-legends" value="Tekkit Legends">Tekkit Legends</option><option data-img="pixelmon" value="Pixelmon">Pixelmon</option><option data-img="crafting-dead-origins" value="Crafting Dead Origins">Crafting Dead Origins</option><option data-img="crafting-dead" value="Crafting Dead">Crafting Dead</option><option data-img="direwolf20" value="Direwolf20">Direwolf20</option><option data-img="project-ozone-2" value="Project Ozone 2">Project Ozone 2</option><option data-img="hexxit" value="Hexxit">Hexxit</option><option data-img="lucky-block" value="Lucky Block">Lucky Block</option><option data-img="big-dig" value="Big Dig">Big Dig</option><option data-img="ftb-infinity" value="FTB Infinity">FTB Infinity</option><option data-img="ftb-unleashed" value="FTB Unleashed">FTB Unleashed</option><option data-img="ftb-presents-skyfactory-3" value="FTB Presents Skyfactory 3">FTB Presents Skyfactory 3</option><option data-img="crazy-craft" value="Crazy Craft">Crazy Craft</option><option data-img="mindcrack" value="Mindcrack">Mindcrack</option><option data-img="orespawn" value="OreSpawn">OreSpawn</option><option data-img="tech-world-2" value="Tech World 2">Tech World 2</option><option data-img="minecraft-comes-alive" value="Minecraft Comes Alive">Minecraft Comes Alive</option><option data-img="too-many-items" value="Too Many Items">Too Many Items</option><option data-img="voltz" value="Voltz">Voltz</option></select>
+<div class="fr modSelected modSelectedPrem">
+<img src="/s/img/mods/vanilla.png">
+<select  id="modVersionPrem" class="modVersion form-control"></select>
+</div>
+<div id="typeWarning" class="text-muted">Changing type may cause server instability.</div>
+</div>
+</div>
+
+<div class="sectionHead"><h3>Select Memory</h3><p>More memory allows for more mods and plugins as well as more players. Memory can be upgraded later in your control panel.</p></div>
+<div class="bar-part">
+<div class="bar-mid fl stepMemory partFree">
+<div data-val="512" class="button btnMem-512">0.5 GB</div></div>
+<div class="bar-mid fr stepMemory partPrem">
+<div data-val="1024" class="button btnMem-1024">1 GB</div><div data-val="2048" class="button btnMem-2048">2 GB</div><div data-val="4096" class="button btnMem-4096">4 GB</div><div data-val="8192" class="button btnMem-8192">8 GB</div><div id="memRequired" class="text-muted">&nbsp;</div>
+</div>
+</div>
+
+
+<div class="sectionHead"><h3>Select Cycle</h3><p>Do you want an hourly or monthly server?</p></div>
+<div class="bar-part">
+<div class="bar-mid fl stepCycle partFree">
+<div data-val="hourly" class="button btnCycle-hourly">Hourly</div>
+</div>
+<div class="bar-mid fr stepCycle partPrem">
+<div data-val="hourly" class="button btnCycle-hourly">Hourly</div>
+<div data-val="monthly" class="button btnCycle-monthly">Monthly</div>
+</div>
+</div>
+
+<div class="sectionHead"><h3>Features</h3><p>What is included in each package.</p></div>
+<div class="bar-part">
+<div class="bar-mid fl bar-last partFree">
+<div class="details">
+<div data-toggle="tooltip" title="Free servers are limited to a maximum of 12 players." class="feature crow" style="border-top:none !important;">12 Players</div><div data-toggle="tooltip" title="Install up to 10 plugins." class="feature crow">10 Plugins</div><div data-toggle="tooltip" title="More than enough processing power to get you started." class="feature crow">2 Core Processor</div><div data-toggle="tooltip" title="When demand is high you might have to wait a few minutes before your server starts." class="feature crow">Queue at peak hours</div></div>
+</div>
+
+<div class="bar-mid fr bar-last partPrem">
+<div class="details">
+<div data-toggle="tooltip" title="We won't limit the amount of players. Have as many as you like." class="feature crow" style="border-top:none !important;">Unlimited Players</div><div data-toggle="tooltip" title="Install as many plugins as you like. Please note that more plugins require more memory." class="feature crow">Unlimited Plugins</div><div data-toggle="tooltip" title="Double the processing power." class="feature crow">4 Core Processor</div><div data-toggle="tooltip" title="Your server will literally be up and running within seconds." class="feature crow">Instant Setup</div><div data-toggle="tooltip" title="No branding or advertisement what so ever." class="feature crow">No Advertisement</div><div data-toggle="tooltip" title="We will help you with whatever problems that might occur. Including mod installation and configuration." class="feature crow">Premium Support</div><div data-toggle="tooltip" title="We know your data is important so your server is automatically backed up daily." class="feature crow">Daily Backups</div><div data-toggle="tooltip" title="We offer auto installable modpacks just a few clicks away. Please note that more mods require more memory." class="feature crow">Modpack Support</div><div data-toggle="tooltip" title="You can upload and use your own JAR file so you can run exactly what you want." class="feature crow">Custom JAR</div><div data-toggle="tooltip" title="All premium servers comes with extra ports for plugins or mods that require it." class="feature crow">Extra Ports</div><div data-toggle="tooltip" title="Share your server with other users without sharing your account details." class="feature crow">Multi Admin</div></div>
+</div>
+
+<div class="fl footer-text text-muted">* Free servers will stop if there are no players online for 15 minutes.</div>
+<div class="fr footer-text text-muted" style="clear:both;">* More plugins require more memory.</div>
+
+</div>
+</div>
+</div>
+
+
+<div id="partFinalize" class="sectionHead-summary" style="border-radius:5px 5px 0 0;margin-top:40px;">
+<h3>Finalize</h3><p>Check that everything is correct and finalize your order.</p>
+</div>
+<div class="stepSummary">
+<div class="stepSummaryInner">
+  <div id="rentFooterStatic" class="rentFooter" style="position:static;border:none;">
+  </div>
+
+    <div id="stepFinal" class="stepFinal">
+      <div id="stepFinalPre">
+        <h2 id="selectNextText" style="margin-top:75px;">&nbsp;</h2>
+      </div>
+
+      <div id="stepFinalGuest" style="display:none;margin-top:-26px;">
+      <p>Учетная запись необходима для запуска сервера</p>
+      <a href="https://hupincraft.000webhostapp.com/signup.html" class="btn btn-med btn-primary" style="width:200px;">Регистрация</a>
+      <img src="/s/img/or-separator.gif" style="margin:0 20px">
+      <a href="https://hupincraft.000webhostapp.com/login.html" class="btn btn-med btn-success" style="width:200px;">Войти</a>
+      </div>
+
+      <div id="stepFinalFree" style="display:none;">
+        <button id="startServerFree" class="btn-success-i btn btn-big" style="width:420px;margin:90px 0 15px 0;">CREATE SERVER</button>
+        <div class="text-muted">Free servers will not renew automatically but you can manually renew your server before it expires at my servers.</div>
+        <div class="text-muted" style="margin-top: 5px;">If your server expire you can just resume it again but you might have to stand in queue.</div>
+      </div>
+
+      <div id="stepFinalPrem" style="display:none;">
+        <button id="startServerPrem" class="btn-warning-i btn btn-big" style="width:420px;">CREATE SERVER</button>
+
+        <div id="autoRenewBox">
+        <div class="autoRenewTxtLeft">Auto Renew</div>
+        <div id="cbAutoRenew" class="cbBox"><div class="cbDot"></div><div class="cbTxt"></div></div>
+        <div class="autoRenewTxtRight"><span id="priceCredits">0</span> <span id="priceCreditsSuffix">Credits</span></div>
+        </div>
+
+        <div id="renewExplainTxt" class="text-muted" style="margin-bottom:20px;">&nbsp;</div>
+        <div class="text-muted" style="padding-top:5px;margin-bottom:-5px;">Buy credits by selecting your preferred payment method below</div>
+      </div>
+    </div>
+
+    <div id="finalProgress" class="c" style="display:none;">
+      <div id="progressInfo"><img src="/s/img/loading5-gray.gif"></div>
+      <div class="progress progress-striped active"><div class="progress-bar rent-progress" style="width:0%;"></div></div>
+      <div class="status c" style="font-size:18px;">Creating</div>
+      <div id="progressInfoLower" class="text-muted"></div>
+    </div>
+
+    <div id="finalError" class="c" style="display:none;"></div>
+</div>
+
+<style>
+.ccBox { float:left; width:250px; margin-left:50px; }
+.ccBox .input-group { margin-bottom:10px; }
+.ccBox #btnCheckoutCC { width:100%; font-size:16px; height:38px; }
+.ccBox .input-group i { width:15px; }
+.ccBox input { height:38px; }
+.cardImages { text-align: center; margin-top:13px; }
+.cardImages img { display: inline-block; margin:0 5px; }
+
+.payHolder { overflow:hidden; }
+.payBox { float:left; width:234px; height:140px; padding:35px 0 0 0; text-align:center; cursor:pointer; font-size:16px; transition:all 0.2s ease 0s; }
+.payBox:hover { background-color:#f5f5f5; }
+.payBox .img { height:50px; display:block; margin:0 auto 3px auto; }
+.smallPayImg { height:41px !important; float:left; margin:5px 2px 8px 2px !important; }
+
+.packBox { float:left; width:374px; overflow:hidden; }
+.packBox .pack { float:left; border:1px solid #d5d5d5; overflow:hidden; text-align:center; border-radius:4px; cursor:pointer !important; width:175px; margin:0 6px 12px 6px; transition:all 0.2s ease 0s; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.packBox .pack .amountCredits { margin-right:64px; color:#999; cursor:pointer !important; font-size:16px; font-weight:500; line-height:42px; transition:all 0.2s ease 0s; }
+.packBox .pack .amountUsd { width:64px; padding:5px 5px; background-color:#fafafa; border-left:1px solid #d5d5d5; float:right; font-size:23px; font-weight:600; color:#999; cursor:pointer !important; transition:all 0.2s ease 0s; }
+.packBox .pack:hover, .packBox .packActive { border-color:#428bca !important; }
+.packBox .pack:hover .amountCredits, .packBox .packActive .amountCredits { color:#428bca !important; }
+.packBox .pack:hover .amountUsd, .packBox .packActive .amountUsd { background-color:#428BCA !important; color:#fff !important; border-color:#347AB7 !important; }
+.packBox .or { color:#999; text-align:center; margin:5px 0; }
+.customCreditsHolder { margin:0 6px; }
+.customCreditsHolder .input-group-addon { color:#999; }
+.customCredits { height:38px; text-align:right; }
+.customCreditsAddon { font-size:16px; }
+.customEnabled .customCreditsAddon { color:#fff !important; border:1px solid #428BCA; background-color:#428BCA !important; }
+.customEnabled .customCredits { border:1px solid #428BCA; }
+.changePayment { cursor:pointer; float:left; margin:45px 50px; }
+.changePayment:hover { color:#999; }
+.changePayment i { font-size:116px; }
+
+.checkoutBox { display:none; text-align:center; }
+#checkoutCard { padding:30px 0; overflow:hidden; }
+#checkoutPaypal { padding:30px 0; overflow:hidden; }
+#btnCheckoutPaypal { width:216px; margin-top:15px; padding:10px 0; font-size:16px; }
+#framePwallWrap { display:none; -webkit-overflow-scrolling: touch; overflow-y: auto; height:480px; width:735px; margin-top:20px; }
+#framePwall { border:0; height:98%; width:100%; }
+#pwallLoading { width:200px; margin:225px auto;}
+#checkoutPwall { overflow:hidden; }
+
+</style>
+<script src="/s/js/brick.1.4.js"></script>
+<script src="/s/js/jquery.payment.js"></script>
+
+<div id="paymentWrap" style="display:none;">
+<div class="payHolder" style="margin:0 auto;width:702px;">
+
+  
+  <div data-method="paypal" class="payBox">
+  <div class="img"><img src="/s/img/pay/paypal-50.png"></div>
+  Paypal  </div>
+
+  
+  <div data-method="card" class="payBox">
+  <div class="img"><img src="/s/img/pay/card-50.png"></div>
+  Credit / Debit Card  </div>
+
+  
+  <div data-method="mobiamo" class="payBox">
+  <div class="img"><img src="/s/img/pay/mobiamo-50.png"></div>
+  SMS  </div>
+
+  
+  <div data-method="paysafecard" class="payBox">
+  <div class="img"><img src="/s/img/pay/paysafecard-50.png"></div>
+  Paysafecard  </div>
+
+  
+  <div data-method="idealnl" class="payBox">
+  <div class="img"><img src="/s/img/pay/idealnl-50.png"></div>
+  iDeal  </div>
+
+  
+</div>
+
+<div id="checkoutPwall" class="checkoutBox">
+
+<div class="changePayment" style="margin:195px 50px;"><i class="fa fa-angle-left"></i></div>
+<div id="pwallLoading" class="c"><img src="/s/img/loading2.gif"></div>
+<div id="framePwallWrap"><iframe id="framePwall"></iframe></div>
+
+</div>
+
+<div id="checkoutCard" class="checkoutBox">
+
+  <div class="changePayment"><i class="fa fa-angle-left"></i></div>
+
+  <div class="packBox">
+  <div class="pack" data-amount="20"><div class="amountUsd">$2</div><div class="amountCredits">20 Credits</div></div><div class="pack" data-amount="50"><div class="amountUsd">$5</div><div class="amountCredits">50 Credits</div></div><div class="pack" data-amount="100"><div class="amountUsd">$10</div><div class="amountCredits">100 Credits</div></div><div class="pack" data-amount="200"><div class="amountUsd">$20</div><div class="amountCredits">200 Credits</div></div><div class="pack" data-amount="400"><div class="amountUsd">$40</div><div class="amountCredits">400 Credits</div></div><div class="pack" data-amount="800"><div class="amountUsd">$80</div><div class="amountCredits">800 Credits</div></div>  <div class="customCreditsHolder input-group"><input class="customCredits form-control" type="text" placeholder="Custom Amount"><div class="customCreditsAddon input-group-addon">Credits</div></div>
+
+  
+  </div>
+
+  <div class="ccBox" style="text-align:left;">
+    <div class="input-group">
+    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+    <input id="card-name" type="text" class="form-control" placeholder="Cardholder Name">
+    </div>
+
+        <div class="input-group">
+    <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+    <input id="card-email" type="text" class="form-control" placeholder="Email">
+    </div>
+    
+    <div class="input-group">
+    <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
+    <input id="card-number" type="text" class="form-control" placeholder="Card Number" value="" autocomplete="cc-number">
+    </div>
+
+    <div class="fl input-group" style="width:49%;">
+    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+    <input id="card-exp" type="text" class="form-control" placeholder="MM / YY" value="" autocomplete="cc-exp">
+    </div>
+
+    <div class="fr input-group" style="width:49%;">
+    <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+    <input id="card-cvc" type="text" class="form-control" placeholder="CVC" value="" autocomplete="off">
+    </div>
+
+    <button id="btnCheckoutCC" class="btn btnCheckout" disabled>Select Amount</button>
+    <div class="cardImages"><img src="/s/img/pay/card-small.png"></div>
+
+  </div>
+</div>
+
+<div id="checkoutPaypal" class="checkoutBox">
+
+  <div class="changePayment"><i class="fa fa-angle-left"></i></div>
+
+  <div class="packBox">
+  <div class="pack" data-amount="20"><div class="amountUsd">$2</div><div class="amountCredits">20 Credits</div></div><div class="pack" data-amount="50"><div class="amountUsd">$5</div><div class="amountCredits">50 Credits</div></div><div class="pack" data-amount="100"><div class="amountUsd">$10</div><div class="amountCredits">100 Credits</div></div><div class="pack" data-amount="200"><div class="amountUsd">$20</div><div class="amountCredits">200 Credits</div></div><div class="pack" data-amount="400"><div class="amountUsd">$40</div><div class="amountCredits">400 Credits</div></div><div class="pack" data-amount="800"><div class="amountUsd">$80</div><div class="amountCredits">800 Credits</div></div>  <div class="customCreditsHolder input-group"><input class="customCredits form-control" type="text" placeholder="Custom Amount"><div class="customCreditsAddon input-group-addon">Credits</div></div>
+
+  
+  </div>
+
+  <div class="fl" style="margin:3px 0 0 50px;">
+    <img src="/s/img/pay/paypal.png" style="display:block;margin:0 auto;">
+    <button id="btnCheckoutPaypal" class="btn btnCheckout" disabled>Select Amount</button>
+    <div class="text-muted" style="margin-top:10px;">Paypal account is not required</div>
+  </div>
+
+</div>
+</div>
+
+<script>
+
+var selectedPayMethod = null;
+var creditsSelected = 0;
+var initHeight = 0;
+var btnCheckoutText = '';
+var ccIsWorking = false;
+
+function updatePayBtn(val, method)
+{
+  method = (method === null ? selectedPayMethod : method);
+  val = parseFloat(val);
+  var valUsd = (val / 10).toFixed(2);
+  var elem = (method == 'card' ? '#btnCheckoutCC' : '#btnCheckoutPaypal');
+  var txt = (method == 'card' ? 'Pay $' + valUsd : 'Checkout - $' + valUsd);
+  creditsSelected = val;
+
+  if(val >= 20) $(elem).prop('disabled', false).text(txt).addClass('btn-success');
+  else $(elem).prop('disabled', true).text('Minimum buy $2').removeClass('btn-success');
+
+  updateAfterPurchase((method == 'card' ? '#checkoutCard' : '#checkoutPaypal'));
+}
+
+function showPwall()
+{
+  
+    var url = 'https://api.paymentwall.com/api/ps/?key=' + (selectedPayMethod == 'mobiamo' ? 'fd5d1701d8efa02f577ae82f24e07e57' : 'fd5d1701d8efa02f577ae82f24e07e57') + '&widget=p2_2&ps=' + selectedPayMethod + '&uid=0';
+
+  
+  $('#framePwallWrap').hide(0);
+  $('#framePwall').attr('src', url);
+  setTimeout(function() { $('#checkoutPwall, #pwallLoading').fadeIn(150); }, 150);
+  setCheckoutBox(506);
+}
+
+function showSecure(data)
+{
+  $('#checkoutCard').html(data);
+}
+
+function isPwall()
+{
+  return (selectedPayMethod != null && selectedPayMethod != 'card' && selectedPayMethod != 'paypal');
+}
+
+$('#framePwall').on('load', function()
+{
+  if(isPwall())
+  {
+    $('#pwallLoading').hide(0);
+    $('#framePwallWrap').show(0);
+  }
+});
+
+function setCheckoutBox(px)
+{
+  $('#paymentWrap').animate({height: px + 'px'}, 400);
+}
+
+function changePayment()
+{
+  if(ccIsWorking) return;
+  selectedPayMethod = null;
+  setCheckoutBox(initHeight);
+  $.when($('.checkoutBox').fadeOut(150)).then(function() { $('.payHolder').fadeIn(150); });
+}
+
+$('.changePayment').click(changePayment);
+
+function showPaypal()
+{
+  $('#checkoutPaypal').fadeIn(150);
+  setCheckoutBox(266);
+}
+
+function showCard()
+{
+  $('.cardImages').show(0);
+  $('#checkoutCard').fadeIn(150);
+  setCheckoutBox(333);
+}
+
+$('.payBox').click(function()
+{
+  
+  selectedPayMethod = $(this).data('method');
+  $.when($('.payHolder, .checkoutBox').fadeOut(150)).then(function()
+  {
+    if(selectedPayMethod == 'card') { showCard(); }
+    else if(selectedPayMethod == 'paypal') { showPaypal(); }
+    else { showPwall(); }
+  });
+});
+
+function setCustomCredits(el)
+{
+  if(!$.isNumeric($(el).val())) $(el).val($(el).val().replace(/[^0-9]/g,''));
+  var maxBuy = 5000;
+  var val = $(el).val();
+  var valInt = parseFloat(val);
+  if(valInt > maxBuy) { $(el).val(maxBuy); valInt = maxBuy; }
+  var valid = val.length > 0;
+  if(ccIsWorking) return;
+  $('.pack').removeClass('packActive');
+  $(el).parent().toggleClass('customEnabled', valid);
+  if(valid) { updatePayBtn(valInt, null); }
+}
+
+$('.customCredits').keyup(function() { setCustomCredits(this); });
+$('.customCredits').click(function() { setCustomCredits(this); });
+
+function resetPacks(e)
+{
+  if(e === null)
+  {
+    $('.pack').removeClass('packActive');
+    $('.customCreditsHolder').removeClass('customEnabled');
+    $('.customCredits').val('');
+  }
+  else
+  {
+    $(e).children('.pack').removeClass('packActive');
+    $(e).children('.customCreditsHolder').removeClass('customEnabled');
+    $(e).children('.customCredits').val('');
+  }
+}
+
+$('.pack').click(function()
+{
+  if(ccIsWorking) return;
+  resetPacks($(this).parent());
+  $(this).addClass('packActive');
+  updatePayBtn($(this).data('amount'), null);
+});
+
+
+$('#card-number').payment('formatCardNumber');
+$('#card-exp').payment('formatCardExpiry');
+$('#card-cvc').payment('formatCardCVC');
+
+$('#btnCheckoutCC').click(function(e)
+{
+  e.preventDefault();
+  ccIsWorking = true;
+  btnCheckoutText = $('#btnCheckoutCC').text();
+  $('.ccBox input').attr('disabled', true);
+  $('#btnCheckoutCC').html('<i style="font-size:20px;" class="fa fa-circle-o-notch fa-spin"></i>').prop('disabled', true);
+
+  var brick = new Brick({ public_key: 'fd5d1701d8efa02f577ae82f24e07e57', form: { formatter: true } }, 'custom');
+  var exp = $('#card-exp').val().replace(/ /g, '').split('/');
+  var name = $('#card-name').val();
+  var gsid = null;
+  var from = null;
+  var email = $("#card-email").val();
+  
+
+  function setError(err)
+  {
+    ccIsWorking = false;
+    $('.ccBox input').attr('disabled', false);
+    $('#btnCheckoutCC').prop('disabled', false).text(btnCheckoutText);
+    alert(err);
+  }
+
+  if(name.indexOf(' ') < 0) { return setError('Please specify both first and last name on card.'); }
+
+  brick.tokenizeCard(
+  {
+    card_number: $('#card-number').val().replace(/ /g, ''),
+    card_expiration_month: exp[0],
+    card_expiration_year: exp[1],
+    card_cvv: $('#card-cvc').val()
+  },
+  function(response)
+  {
+    if (response.type == 'Error') { setError(response.error); }
+    else
+    {
+      var fingerprint = Brick.getFingerprint();
+      $.post('/payment/brick/checkout/', { donate: 0, name: name, credits: creditsSelected, gsid: gsid, from: from, email: email, token: response.token, fingerprint: fingerprint }, function(resp)
+      {
+        var result = resp['result'];
+        if(result == 'pending') alert('Your transaction is under review. If accepted you will receive your credits within a few minutes.');
+        else if(result == 'secure') return showSecure(resp['data']);
+        else if(result == 'error') return setError(resp['data']);
+        else if(result == 'ok')
+        {
+          ccIsWorking = false;
+          $('.ccBox input').attr('disabled', false).val('');
+          $('#btnCheckoutCC').html('<i style="font-size:20px;" class="fa fa-check"></i>').prop('disabled', true);
+          resetPacks($('#checkoutCard .packBox'));
+        }
+      }, 'json');
+    }
+  });
+
+  return false;
+});
+
+$('#btnCheckoutPaypal').click(function()
+{
+  
+    window.open('/payment/paypal/checkout/' + creditsSelected + '/', '_blank');
+
+  });
+
+function addCreditsOption(credits)
+{
+  resetPacks(null);
+  credits = parseInt(credits);
+  if(credits < 20) { return; }
+
+  var packFound = false;
+  $('.packBox .pack').each(function()
+  {
+    if($(this).data('amount') == credits) { $(this).addClass('packActive'); packFound = true; }
+  }).promise().done(function()
+  {
+    if(!packFound)
+    {
+      $('.customCredits').val(credits);
+      $('.customCreditsHolder').addClass('customEnabled');
+    }
+  });;
+
+  updatePayBtn(credits, 'card');
+  updatePayBtn(credits, 'paypal');
+}
+
+function updateAfterPurchase(elem)
+{
+   $(elem + ' .accountBalanceAfter').text(parseInt($('.credits-value:first').text()) + creditsSelected).parent().fadeIn(140);
+}
+
+$(document).ready(function() { initHeight = $('#paymentWrap').height(); $('#paymentWrap').css('height', initHeight); });
+$('#donateFrom').focusout(function() { if(isPwall()) { showPwall(); } });
+
+</script></div>
+
+<div id="paymentSecure" class="c text-muted rentActive" style="font-style:italic;">
+<img src="/s/img/pay/secure.gif" style="margin-bottom:6px;"><br>
+<div style="font-size:12px;">
+All payments are processed securely and the credits will be delivered to your account instantly.<br>
+By completing the purchase you agree with the <a target="_blank" href="/terms/">Terms of Service</a>.<br>
+</div>
+</div>
+<div id="rentFooterFixed" class="rentFooter" style="display:none;overflow:visible;">
+<div style="position:absolute;width:100%;left:0;top:0;background-color:#fff;height:80px;z-index:6;opacity:0.9;border-bottom:1px solid #d5d5d5;"></div>
+<div class="c940" style="position:relative;z-index:7;width:1000px;padding:10px 65px;overflow:visible;">
+<img id="imgCreate" style="position:absolute;bottom:-55px;left:42px;" src="/s/img/icon-mc-open.png">
+<div class="fl" style="margin-left:110px;"><b>Location</b><p id="footerLocation"></p></div>
+<div class="fl"><b>Type</b><p style="max-width:191px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;" id="footerType"></p></div>
+<div class="fl"><b>Memory</b><p id="footerMemory"></p></div>
+<div class="fl"><b>Disk</b><p id="footerDisk"></p></div>
+<div class="fl" style="margin-right:5px;min-width:70px;"><b>Cycle</b><p id="footerCycle"></p></div>
+<div class="fr"><b style="text-align:right;">Price</b><p style="margin:0 0 10px 0;" id="footerCredits"></p></div>
+</div>
+</div>
+</div>
+
+<script>
+
+var creditsMap = { 'hourly': {
+1024:1,2048:2,4096:4,8192:8,}, 'monthly': {
+1024:50,2048:100,4096:200,8192:400,}};
+
+var versionMap = {
+'Vanilla':{'1.12.2': 512,'1.12.1': 512,'1.12': 512,'1.11.2': 512,'1.11.1': 512,'1.11': 512,'1.10.2': 512,'1.10.1': 512,'1.10': 512,'1.9.4': 512,'1.9.2': 512,'1.9.1': 512,'1.9': 512,'1.8.9': 512,'1.8.8': 512,'1.8.7': 512,'1.8.6': 512,'1.8.5': 512,'1.8.4': 512,'1.8.3': 512,'1.8.1': 512,'1.8': 512,'1.7.10': 512,'1.7.9': 512,'1.7.8': 512,'1.7.7': 512,'1.7.5': 512,'1.7.4': 512,'1.7.2': 512,'1.6.4': 512,'1.6.2': 512,'1.5.2': 512,'1.4.7': 512,},'Vanilla Snapshot':{'1.13 (17w50a)': 512,'1.13 (17w45b)': 512,'1.12 (Pre 7)': 512,'1.12 (Pre 6)': 512,'1.12 (Pre 5)': 512,'1.12 (Pre 4)': 512,'1.12 (Pre 2)': 512,'1.12 (Pre 1)': 512,'1.12 (17w18b)': 512,'1.12 (17w17b)': 512,'1.12 (17w17a)': 512,'1.12 (17w16b)': 512,'1.12 (17w15a)': 512,'1.12 (17w14a)': 512,'1.12 (17w13b)': 512,'1.12 (17w13a)': 512,'1.12 (17w06a)': 512,'1.11.1 (16w50a)': 512,'1.11 (Pre 1)': 512,'1.11 (16w44a)': 512,'1.11 (16w43a)': 512,'1.11 (16w42a)': 512,'1.11 (16w41a)': 512,'1.11 (16w40a)': 512,'1.11 (16w39b)': 512,'1.11 (16w39a)': 512,'1.11 (16w38a)': 512,'1.10 (Pre1)': 512,'1.9.3 (Pre 3)': 512,'1.9.3 (Pre 2)': 512,'1.9.3 (Pre 1)': 512,'1.9.1 (Pre 3)': 512,'1.9.1 (Pre 2)': 512,'1.9.1 (Pre 1)': 512,'1.9 (Pre 4)': 512,'1.9 (Pre 3)': 512,'1.9 (Pre 2)': 512,'1.9 (Pre 1)': 512,'1.9 (16w07b)': 512,'1.9 (16w07a)': 512,'1.9 (16w06a)': 512,'1.9 (16w05b)': 512,'1.9 (16w05a)': 512,'1.9 (16w04a)': 512,'1.9 (16w03a)': 512,'1.9 (16w02a)': 512,'1.9 (15w51b)': 512,'1.9 (15w51a)': 512,'1.9 (15w50a)': 512,'1.9 (15w49b)': 512,'1.9 (15w49a)': 512,'1.9 (15w47c)': 512,'1.9 (15w47b)': 512,'1.9 (15w47a)': 512,'1.9 (15w46a)': 512,'1.9 (15w45a)': 512,'1.9 (15w44b)': 512,'1.9 (15w44a)': 512,'1.9 (15w43c)': 512,},'CraftBukkit':{'1.12.2': 512,'1.12.1': 512,'1.12': 512,'1.11.2': 512,'1.11.1': 512,'1.11': 512,'1.10.2': 512,'1.10': 512,'1.9.4': 512,'1.9.2': 512,'1.9': 512,'1.8.8': 512,'1.8.7': 512,'1.8.6': 512,'1.8.5': 512,'1.8.4': 512,'1.8.3': 512,'1.8': 512,'1.7.10': 512,'1.7.9': 512,'1.7.8': 512,'1.7.5': 512,'1.7.2': 512,'1.6.4': 512,'1.6.2': 512,'1.5.2': 512,},'Spigot':{'1.12.2': 512,'1.12.1': 512,'1.12': 512,'1.11.2': 512,'1.11.1': 512,'1.11': 512,'1.10.2': 512,'1.10': 512,'1.9.4': 512,'1.9.2': 512,'1.9': 512,'1.8.8': 512,'1.8.7': 512,'1.8.6': 512,'1.8.5': 512,'1.8.4': 512,'1.8.3': 512,'1.8': 512,'1.7.10 (1.8 Comp)': 512,},'Paper Spigot':{'1.12.2': 512,'1.12.1': 512,'1.11.2': 512,'1.10.2': 512,'1.8.8': 512,'1.7.10': 512,},'Forge':{'14.23.0.2512 (1.12.2)': 2048,'14.23.0.2495 (1.12.2)': 2048,'14.21.1.2443 (1.12)': 2048,'14.21.1.2426 (1.12)': 2048,'13.20.1.2476 (1.11.2)': 2048,'13.20.0.2315 (1.11.2)': 2048,'13.20.0.2223 (1.11.2)': 2048,'13.19.0.2168 (1.11)': 2048,'12.18.3.2511 (1.10.2)': 2048,'12.18.3.2316 (1.10.2)': 2048,'12.18.3.2185 (1.10.2)': 2048,'12.18.2.2099 (1.10.2)': 2048,'12.16.0.1865 (1.9)': 2048,'11.15.1.1746 (1.8.9)': 2048,'11.14.4.1577 (1.8)': 2048,'10.13.4.1614 (1.7.10)': 2048,'10.13.4.1448 (1.7.10)': 2048,'10.12.2.1147 (1.7.2)': 2048,'9.11.1.965 (1.6.4)': 2048,'9.10.1.871 (1.6.2)': 2048,},'Cauldron':{'1.7.10 (2.1403.1.54)': 2048,'1.7.10 (1.1388.1.0)': 2048,'1.6.4': 2048,},'Tekkit':{'1.2.9g (MC 1.6.4)': 2048,'1.2.9e (MC 1.6.4)': 2048,},'Tekkit Legends':{'1.1.1 (MC 1.7.10)': 2048,},'Pixelmon':{'5.1.2': 2048,'5.0.4': 2048,'5.0.1': 2048,'5.0.0 (MC 1.10.2)': 2048,'4.2.7 (MC 1.8.9)': 2048,'4.2.5 (MC 1.8.9)': 2048,'4.2.2 (MC 1.8.9)': 2048,'4.2.1 (MC 1.8.9)': 2048,'4.1.3 (MC 1.8)': 2048,'4.1.1 (MC 1.8)': 2048,'4.1.0 (MC 1.8)': 2048,'4.0.7 (MC 1.8)': 2048,'4.0.6 (MC 1.8)': 2048,'4.0.4 (MC 1.8)': 2048,'4.0.1 (MC 1.8)': 2048,'3.4 (MC 1.7.10)': 2048,'3.3.9 (MC 1.7.10)': 2048,'3.3.8 (MC 1.7.10)': 2048,},'Crafting Dead Origins':{'1.0.6 (MC 1.6.4)': 2048,},'Crafting Dead':{'1.3.4 (MC 1.6.4)': 2048,'1.3.0 (MC 1.6.4)': 2048,'1.2.6 (MC 1.6.4)': 2048,'1.2.4 (MC 1.6.4)': 2048,'1.2.2 (MC 1.6.4)': 2048,'1.1.5 (MC 1.6.4)': 2048,'2.4.4 (MC 1.5.2)': 2048,'2.4.2 (MC 1.5.2)': 2048,},'Direwolf20':{'1.5.0 (MC 1.7.10)': 4096,'1.0.3 (MC 1.7.10)': 4096,'1.0.23 (MC 1.6.4)': 4096,},'Project Ozone 2':{'2.3.0 (MC 1.7.10)': 2048,},'Hexxit':{'10.0.10 (MC 1.5.2)': 2048,},'Lucky Block':{'5.2.0 (MC 1.8.1)': 2048,},'Big Dig':{'1.3.9 (MC 1.5.2)': 4096,},'FTB Infinity':{'3.0.2 (MC 1.7.10)': 2048,'3.0.1 (MC 1.7.10)': 2048,'2.6.0 (MC 1.7.10)': 2048,'2.4.2 (MC 1.7.10)': 2048,},'FTB Unleashed':{'1.1.7 (MC 1.5.2)': 2048,},'FTB Presents Skyfactory 3':{'3.0.15 (MC 1.10.2)': 2048,'3.0.13 (MC 1.10.2)': 2048,'3.0.12 (MC 1.10.2)': 2048,'3.0.9 (MC 1.10.2)': 2048,'3.0.8 (MC 1.10.2)': 2048,},'Crazy Craft':{'3.0.2 (MC 1.7.10)': 4096,'3.0.1 (MC 1.7.10)': 4096,'2.2 (MC 1.6.4)': 2048,},'Mindcrack':{'8.3.2 (MC 1.4.7)': 2048,},'OreSpawn':{'20.3 (MC 1.7.10)': 2048,'20.2 (MC 1.7.10)': 2048,},'Tech World 2':{'1.1.6 (MC 1.6.4)': 2048,},'Minecraft Comes Alive':{'5.2.3 (MC 1.10.2)': 2048,'4.1.5 (MC 1.7.10)': 2048,},'Too Many Items':{'2014.01.13 (MC 1.7.2)': 2048,},'Voltz':{'3.1.1 (MC 1.6.4)': 2048,'2.0.4 (MC 1.5.2)': 2048,},
+};
+
+$('.modSelect').change(function() { if(rentState != 0) return; updateMod(this, null, null); });
+
+function updateMod(elem, selectedVer, cb)
+{
+  var e = $(elem).parent().find('img:first');
+  var mod = $(elem).find(":selected");
+  if(mod.length) { $(e).attr('src', '/s/img/mods/' + mod.data('img') + '.png'); }
+  updateVersions(elem, selectedVer, cb);
+  if($(elem).parent().hasClass('partPrem')) updateMemRequired(elem, mod);
+}
+
+if (!Object.keys) { Object.keys = function(obj) { var keys = []; for (var i in obj) { if (obj.hasOwnProperty(i)) { keys.push(i); } } return keys; }; }
+
+function updateVersions(self, selected, cb)
+{
+  selected = selected || null;
+  if(self === null) {
+    var selectValues = Object.keys(versionMap['Vanilla']);
+    var elem = '#modVersionFree, #modVersionPrem';
+  }
+  else {
+    var selectValues = Object.keys(versionMap[$(self).val()]);
+    var elem = $(self).parent().find('.modVersion');
+  }
+
+  $(elem).empty();
+  var len = selectValues.length;
+  $.each(selectValues, function(key, val) {
+      $(elem).append($("<option/>", { value: val, text: 'v ' + val, selected: (val == selected) }));
+      if(!--len) { if(cb != null) { cb(); }}
+  });
+}
+
+function updateMemRequired(self, mod)
+{
+  var mem = parseInt(versionMap[mod.val()][$('#modVersionPrem').val()]);
+  if(mem == 512) { $('#memRequired').text(''); }
+  else { $('#memRequired').text(mod.val() + ' requires at least ' + (mem / 1024) + ' GB of memory.'); }
+
+  $('.stepMemory.partPrem > .button').each(function(i, v)
+  {
+    if(parseInt($(v).data('val')) < mem) $(v).addClass('button-disabled');
+    else $(v).removeClass('button-disabled');
+  });
+
+  if(selectedMemory != null) { if(selectedMemory < mem) { updateButton($('.stepMemory.partPrem > .btnMem-' + mem)); } }
+}
+
+$(".button").on("mousedown mouseup mouseleave", function(e) {
+  if(rentState != 0) return;
+  if($(this).hasClass('button-disabled')) return;
+  $(this).toggleClass("button-active", e.type == "mousedown" );
+});
+
+$('.button').click(function() { updateButton(this); });
+
+function updateButton(self)
+{
+  if(rentState != 0) return;
+  if($(self).hasClass('button-disabled')) return;
+  var parent = $(self).parent();
+  if(parent.hasClass('stepMemory')) { animateFooter('#footerMemory'); animateFooterAlt('#footerDisk'); }
+  else if(parent.hasClass('stepCycle')) { animateFooter('#footerCycle'); }
+
+  $(self).parent().find('.button').removeClass('button-selected');
+  $(self).addClass('button-selected');
+  updateUI(parent.hasClass('partPrem'));
+}
+
+$('.partFree .modSelect, .partFree .modVersion').change(function() { if(rentState != 0) return; updateUI(false); animateFooter('#footerType'); });
+$('.partPrem .modSelect, .partPrem .modVersion').change(function() { if(rentState != 0) return; updateUI(true); animateFooter('#footerType'); });
+$('.partFree .modSelect, .partFree .modVersion').click(function() { if(rentState != 0) return; updateUI(false); });
+$('.partPrem .modSelect, .partPrem .modVersion').click(function() { if(rentState != 0) return; updateUI(true); });
+
+var selectedLocation = null;
+var selectedType = null;
+var selectedVersion = null;
+var selectedCycle = null;
+var selectedMemory = null;
+var isPremium = 0;
+var rentState = 0;
+var isGuest = 1;
+var queueStartPos = null;
+var inQueue = 0;
+var queueTimer = null;
+var titleSwap = 0;
+var confirmTime = 60;
+var confirmTimer = confirmTime;
+var oldTitle = document.title;
+var isResume = 0;
+var curCredits = 0;
+var haveFree = 0;
+var curHostname = '';
+var hostnameOk = false;
+var session = '';
+
+
+$('.partFree.bar-top').click(function() { updateUI(false); });
+$('.partPrem.bar-top').click(function() { updateUI(true); });
+
+$('#selectNA').click(function() { if(rentState != 0) return; selectLocation('North America'); animateFooter('#footerLocation'); });
+$('#selectEU').click(function() { if(rentState != 0) return; selectLocation('Europe'); animateFooter('#footerLocation'); });
+
+function selectLocation(loc)
+{
+  var elem = (loc == 'Europe' ? '#selectEU' : '#selectNA');
+  var otherElem = (loc == 'Europe' ? '#selectNA' : '#selectEU');
+
+  selectedLocation = loc;
+  $(otherElem).css('background-color', '#fff');
+  $(elem).css('background-color', '#f5f5f5');
+  $('#footerLocation').text(loc);
+  updateUI(null);
+}
+
+$("#selectNA").mouseover(function(){ if(selectedLocation == null) { $("#selectNA").css("background-color", "#f5f5f5"); $("#selectEU").css("background-color", "#fff"); } });
+$("#selectNA").mouseout(function(){ if(selectedLocation == 'Europe') { $("#selectEU").css("background-color", '#f5f5f5'); } if(selectedLocation != 'North America') { $("#selectNA").css("background-color", "#fff"); }});
+$("#selectEU").mouseover(function(){ if(selectedLocation == null) { $("#selectEU").css("background-color", "#f5f5f5"); $("#selectNA").css("background-color", "#fff"); } });
+$("#selectEU").mouseout(function(){ if(selectedLocation == 'North Amerca') { $("#selectNA").css("background-color", '#f5f5f5'); } if(selectedLocation != 'Europe') { $("#selectEU").css("background-color", "#fff"); } });
+
+var lastPrice = null;
+function updateCredits(clear)
+{
+  if(clear) { $('#footerCredits').text(''); }
+  else {
+    if(isPremium) {
+      var price = creditsMap[selectedCycle][selectedMemory];
+      var cycleStr = selectedCycle.substring(0, selectedCycle.length - 2);
+      var renewActive = $('#cbAutoRenew').hasClass('active');
+      $('#priceCredits').text(price);
+      updatePriceInfo(price, renewActive, cycleStr);
+      setEnoughCredits(price, stateCredits);
+    }
+    else {
+      var price = 'Free';
+      $('#footerCredits').text('Free');
+    }
+    if(price != lastPrice && !inQueue) animateFooterAlt('#footerCredits');
+    lastPrice = price;
+  }
+}
+
+function updatePriceInfo(price, renew, cycleStr)
+{
+  var priceSuffix = 'Credit' + (price == 1 ? '' : 's') + (renew ? ' / ' + cycleStr : '');
+  $('#renewExplainTxt').html((renew ? 'Server will renew automatically every ' + cycleStr + ' for as long as you have credits available on your account.<br>You can turn off the auto renew at any time at my servers.' : 'Server will run for one ' + cycleStr + ' and then expire.<br>If you wish you can turn on auto renew later at my servers.'));
+  $('#priceCreditsSuffix').text(priceSuffix);
+  $('#footerCredits').text(price + ' ' + priceSuffix);
+}
+
+function setEnoughCredits(price, currentCredits)
+{
+  if(price > currentCredits) { $('#startServerPrem').addClass('start-disabled').text('NOT ENOUGH CREDITS'); }
+  else { $('#startServerPrem').removeClass('start-disabled').text('CREATE SERVER'); }
+}
+
+function animateFooter(elem)
+{
+  function animGo(sz, s) {
+    if(sz > 0.8 && s) {
+      $(elem).css({'transform':'scale('+sz+')'});
+      setTimeout(function() { animGo(sz/1.2, true); }, 15);
+    }
+    else if(sz <= 1) {
+      $(elem).css({'transform':'scale('+sz+')'});
+      if(sz != 1) { setTimeout(function() { animGo((sz*1.1 >= 1 ? 1 : sz*1.1), false); }, 15) }
+    }
+  }
+  animGo(4, true);
+}
+
+function animateFooterAlt(elem)
+{
+  function animGo(sz, s) {
+    if(sz < 2.3 && s) { $(elem).css({'transform':'scale('+sz+')'}); setTimeout(function(){ animGo(sz*1.1, true); }, 15); }
+    else if(sz > 1) { $(elem).css({'transform':'scale('+sz+')'}); setTimeout(function(){ animGo(sz/1.1, false); }, 15); }
+    else { $(elem).css({'transform':'scale(1)',}); }
+  }
+  animGo(1, true);
+}
+
+function updateUI(premium)
+{
+  if(premium !== null && !premium && haveFree) return;
+  $('#finalError').hide(0);
+  if(!isResume) $('#rentFooterFixed').show(0);
+  if(!inQueue) { $('#stepFinal').show(0); }
+  $('#stepFinalPre').css('paddingTop', '41px');
+  $('#stepFinalGuest').css('marginTop', '0');
+  if(premium === null) { return checkAllSelected(); }
+  var objCycle = null;
+  var objMem = null;
+  isPremium = premium;
+
+  if(premium && !inQueue)
+  {
+    grayFree();
+    selectedType = $('#modSelectPrem').val();
+    selectedVersion = $('#modVersionPrem').val();
+    if(selectedType != null)
+      $('#footerType').text($('#modSelectPrem option:selected').text() + ' ' + $('#modVersionPrem option:selected').text().substr(2));
+    else
+      $('#footerType').text('');
+
+    objMem = $('.stepMemory.partPrem > .button-selected');
+    objCycle = $('.stepCycle.partPrem > .button-selected');
+  }
+  else
+  {
+    grayPrem();
+    selectedType = $('#modSelectFree').val();
+    selectedVersion = $('#modVersionFree').val();
+    if(selectedType != null)
+      $('#footerType').text($('#modSelectFree option:selected').text() + ' ' + $('#modVersionFree option:selected').text().substr(2));
+    else
+      $('#footerType').text('');
+
+    objMem = $('.stepMemory.partFree > .button-selected');
+    objCycle = $('.stepCycle.partFree > .button-selected');
+  }
+
+  var oldselectedMemory = selectedMemory
+  selectedMemory = objMem.data('val');
+  selectedCycle = objCycle.data('val');
+  $('#footerMemory').text(objMem.text());
+  if(selectedMemory != null) $('#footerDisk').text((selectedMemory / 1024) * 10 + ' GB');
+  $('#footerCycle').text(objCycle.text());
+  updateCredits(selectedCycle == null || selectedMemory == null);
+
+  if(!inQueue) checkAllSelected();
+}
+
+function checkAllSelected()
+{
+  if(isGuest) { return showGuest(); }
+
+  if($('#serverName').data('ok') == '1') {
+    if(selectedLocation != null) {
+      if(selectedType != null) {
+        if(selectedMemory != null) {
+          if(selectedCycle != null) {
+            allSelected();
+          } else { selectNext('Please select a cycle'); }
+        } else { selectNext('Please select memory'); }
+      } else { selectNext('Please select a type'); }
+    } else { selectNext('Please select a location'); }
+  } else { selectNext('Please choose a hostname'); }
+}
+
+function selectNext(str)
+{
+  $('.stepFinal').css('borderBottom', 'none');
+  $('#stepFinalFree, #stepFinalPrem, #stepFinalGuest').hide(0);
+  $('#paymentWrap').hide(0);
+  $('#paymentSecure').css('visibility', 'hidden');
+  $('#stepFinalPre').show(0);
+
+  $('#selectNextText').text(str);
+}
+
+function showGuest()
+{
+  $('#stepFinalPre').hide(0);
+  $('#stepFinalFree, #stepFinalPrem').hide(0);
+  $('#stepFinalGuest').show(0);
+  $('.stepFinal').css('borderBottom', 'none');
+  $('#paymentWrap').hide(0);
+  $('#paymentSecure').css('visibility', 'hidden');
+}
+
+function allSelected()
+{
+  $('#stepFinalPre').hide(0);
+
+  if(isPremium) {
+    addCreditsOption(getPrice() - curCredits);
+    $('#stepFinalFree, #stepFinalGuest').hide(0);
+    $('#stepFinalPrem').show(0);
+    $('#paymentWrap').show(0);
+    $('.stepFinal').show(0).css('borderBottom', '1px solid #d5d5d5');
+    $('#paymentSecure').css('visibility', 'visible');
+    $('.stepSummaryInner').css('height', '341px');
+  }
+  else {
+    $('#stepFinalPrem, #stepFinalGuest').hide(0);
+    $('#stepFinalFree').show(0);
+    $('.stepFinal').show(0).css('borderBottom', 'none');
+    $('#paymentWrap').hide(0);
+    $('#paymentSecure').css('visibility', 'hidden');
+    $('.stepSummaryInner').css('height', '443px');
+  }
+}
+
+function grayFree()
+{
+  $('.partPrem').removeClass('grayed').css('borderColor', '#ffce54');
+  $('.sectionHead').css('borderRightColor', '#ffce54');
+  $('.sectionHead-summary, .stepSummary').css('borderColor', '#ffce54');
+
+  $('.partFree').addClass('grayed').css('borderColor', '#bbb');
+  $('.sectionHead').css('borderLeftColor', '#d5d5d5');
+}
+
+function grayPrem()
+{
+  $('.partFree').removeClass('grayed').css('borderColor', '#a0d468');
+  $('.sectionHead').css('borderLeftColor', '#a0d468');
+  $('.sectionHead-summary, .stepSummary').css('borderColor', '#a0d468');
+
+  $('.partPrem').addClass('grayed').css('borderColor', '#bbb');
+  $('.sectionHead').css('borderRightColor', '#d5d5d5');
+  $('.stepSummaryInner').css('height', '443px');
+}
+
+$('#startServerFree, #startServerPrem').click(function() { startRent(this); });
+
+function getPrice()
+{
+  return (isPremium ? $('#priceCredits').text() : 0);
+}
+
+function startRent(self)
+{
+  if(rentState != 0 || $(self).hasClass('start-disabled')) return;
+  initProgress();
+
+  var curProgress = 0;
+  var gotReturn = false;
+  function updateProgress()
+  {
+    if(gotReturn) return;
+    showProgress(null, ++curProgress);
+    setTimeout(updateProgress, 100);
+  }
+  updateProgress();
+
+  var args = {
+    game: 'mc',
+    id: 0,
+    premium: (isPremium ? 1 : 0),
+    name: $('#serverName').val() + '.' + $('#selectedHostname').data('value'),
+    location: selectedLocation,
+    type: selectedType,
+    version: selectedVersion,
+    memory: selectedMemory,
+    cycle: selectedCycle,
+    renew: ($('#cbAutoRenew').hasClass('active') ? 1 : 0),
+    price: getPrice(),
+    session: session,
+    csrf: ''
+  };
+
+  API('rent', args, function(data)
+  {
+    gotReturn = true;
+    var ret = data.ret;
+    var err = data.err;
+    if(err)
+    {
+      if(err == 'transfer') showTransferring(ret);
+      else if(err == 'queue') enqueue();
+      else showError(err);
+    }
+    else { showDone(ret); }
+  });
+}
+
+
+var footerState = null;
+$(window).scroll(function()
+{
+  if(footerState !== null) { setFooter(); }
+  validateHostname();
+});
+
+function setFooterAbs()
+{
+  if(footerState != 'absolute')
+  {
+    footerState = 'absolute';
+    $('#rentFooterFixed').css('position', 'absolute').css('bottom', 'inherit').css('border-bottom', '1px solid #d5d5d5').css('top', $('#rentFooterStatic').offset().top - 1);
+  }
+}
+
+function setFooterFix()
+{
+  if(footerState != 'fixed')
+  {
+    footerState = 'fixed';
+    $('#rentFooterFixed').css('position', 'fixed').css('bottom', '0').css('top', 'inherit');
+  }
+}
+
+function isinView(elem)
+{
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  return (elemBottom <= docViewBottom);
+}
+
+function setFooter()
+{
+  if(isinView('#rentFooterStatic')) setFooterAbs();
+  else setFooterFix();
+}
+
+function showUi(delay)
+{
+  if(delay)
+    setTimeout(doShow, 5);
+  else
+    doShow();
+
+  function doShow()
+  {
+    $('.rentActive, #bot').fadeTo(100, 1);
+    $('#rentFooterFixed').fadeIn(200, setFooter);
+  }
+}
+
+function showHaveFree()
+{
+  grayFree();
+  $('.partFree').attr('title', 'You already have a free server. Select it at my servers.');
+  $('.partFree .button').addClass('button-disabled');
+  $('.partFree select').attr('disabled', true);
+}
+
+function queuePos()
+{
+  if(!inQueue) return;
+  getUserState(null, function(ret)
+  {
+    if('confirm' in ret) return showConfirm();
+    var pos = ('queue' in ret ? ret.queue : null);
+    if(pos !== null) showQueue(pos);
+    setTimeout(queuePos, (pos < 20 && pos !== null ? 2000 : 10000));
+  });
+}
+
+function transferProgress(host)
+{
+  var id = 0;
+  if(id == 0) return;
+
+  $.post('/r/createServer/transferProgress/', { id : id }, function(ret)
+  {
+    if(ret == true) { showDone(id); }
+    else if(ret !== false) { showProgress(ret + ' %', parseInt(ret)); }
+    setTimeout(function() { transferProgress(host); }, 1000);
+  }, 'json');
+}
+
+
+  updateVersions(null);
+  checkAllSelected();
+  setFooter();
+  if(haveFree) { showHaveFree(); }
+
+
+function showError(msg)
+{
+  setRentState(0);
+  $.when($('#finalProgress, .stepFinal, #paymentWrap').fadeOut(200)).then(function() {
+    $('#finalError').html(msg).fadeIn(200);
+  });
+}
+
+function initProgress()
+{
+  $('.stepSummaryInner').css('height', '443px');
+  setRentState(1);
+  $('#finalProgress .rent-progress').removeClass('progress-bar-warning').addClass('progress-bar-success');
+  $('.stepFinal, #paymentWrap').hide(0);
+  $('#finalProgress').show(0);
+}
+
+function setRentState(set)
+{
+  rentState = set;
+}
+
+function showProgress(msg, progress)
+{
+  if(msg != null) $('#finalProgress .status').html(msg);
+  if(progress != null) $('#finalProgress .rent-progress').css('width', progress + '%');
+}
+
+function enqueue()
+{
+  inQueue = true;
+  playSound(false);
+  showQueue(0);
+  setTimeout(queuePos, 2000);
+}
+
+function showQueue(progress)
+{
+  if(queueStartPos === null)
+  {
+    if(progress != 0) queueStartPos = parseInt(progress);
+    $('#finalProgress').css('margin', '24px auto');
+    $('#finalProgress .status').css('font-style', 'italic');
+    $('#finalProgress .rent-progress').removeClass('progress-bar-success').addClass('progress-bar-warning');
+    $('#progressInfo').html('<h2>In Queue</h2><p class="text-muted">All free servers are currently booked. Wait for one to become available or rent a premium server. Premium servers are always available instantly.</p>');
+    $('#progressInfoLower').html('<div>Once your server is ready <a id="confirmSoundTest" style="cursor:pointer;">this</a> sound will play and you will have 60 seconds to claim your server before you lose your queue position.</div><button id="leaveQueueBtn" class="btn btn-warning-i btn-med" style="margin-top:22px;">Leave Queue</button>');
+  }
+  if(progress == 0) { showProgress('&nbsp;', 100); }
+  else { showProgress('Position ' + progress, Math.ceil(progress * 100 / queueStartPos)); }
+}
+
+function showConfirm()
+{
+  $('#progressInfoLower').html('<button id="startServerQueueBtn" class="btn btn-success-i btn-big" style="width:350px;margin-top:20px;">START SERVER</button>');
+  function confirmTick()
+  {
+    if(confirmTimer > 0)
+    {
+      confirmTimer--;
+      showProgress(confirmTimer + ' seconds left to claim your server.', Math.ceil(confirmTimer * 100 / confirmTime));
+      if(titleSwap == 0) { titleSwap = 1; document.title = '-- Your server is ready! --'; }
+      else { titleSwap = 0; document.title = 'Your server is ready!'; }
+    }
+    if(confirmTimer == 0)
+    {
+      clearInterval(queueTimer);
+      document.title = oldTitle;
+      showProgress('&nbsp;', 0);
+      setRentState(0);
+      $('#progressInfoLower').html('Sorry, you were too slow to claim your server.<br><a href="/create-server/minecraft/" id="queueTryAgain" class="btn btn-success-i btn-med" style="width:350px;margin-top:20px;width:180px;">Try Again</a>');
+    }
+  }
+
+  $('#finalProgress .rent-progress').removeClass('progress-bar-warning').addClass('progress-bar-success');
+  confirmTick();
+  queueTimer = setInterval(function() { confirmTick(); }, 1000);
+  playSound(true);
+  setTimeout(function() { playSound(true); }, 1000 * 30);
+}
+
+function showTransferring(host)
+{
+  if(queueTimer != null) clearInterval(queueTimer);
+  $('#stepFinal, #paymentWrap').hide(0);
+  $('#finalProgress').show(0),
+  $('#finalProgress .rent-progress').removeClass('progress-bar-warning').addClass('progress-bar-success');
+  $('#progressInfoLower').html('');
+  $('#progressInfo').html("<h2 style='margin-bottom:30px;'>Transferring</h2><p class='text-muted'>Your server is currently being transferred to it's destination.</p>");
+  showProgress('', 0);
+  transferProgress(host);
+}
+
+function showDone(id) { setTimeout(function() { document.location.href = '/control-panel/' + id + '/'; }, 1500); }
+
+$('#progressInfoLower').on('click', '#confirmSoundTest', function() { playSound(true); });
+$('#progressInfoLower').on('click', '#leaveQueueBtn', function() { $.post('/r/createServer/leaveQueue/', function() { location.reload(); }); });
+$('#progressInfoLower').on('click', '#startServerQueueBtn', function() { clearInterval(queueTimer); sendConfirmQueue(); $('#finalProgress .rent-progress').removeClass('progress-bar-warning').addClass('progress-bar-success'); });
+
+function sendConfirmQueue()
+{
+  API('rent/confirm', { session: session }, function(data)
+  {
+    var err = data.err;
+    var ret = data.ret;
+
+    if(err)
+    {
+      if(err == 'transfer') showTransferring(ret);
+      else showError(err);
+    }
+    else { showDone(ret); }
+  });
+}
+
+function playSound(doPlay)
+{
+  if($('#cSound').length == 0)
+  {
+    var cSound = document.createElement('audio');
+    cSound.setAttribute('id', 'cSound');
+    cSound.setAttribute('src', '/s/notice.mp3');
+    $('body').append(cSound);
+  }
+  if(doPlay) $('#cSound').get(0).play();
+}
+
+
+$('#serverName').keyup(function () { if($('#serverName').val().length >= 2) validateHostname(); });
+$('#serverName').focusout(function() { validateHostname(); });
+
+function validateHostname(cb)
+{
+  var name = $('#serverName').val();
+  var host = $('#selectedHostname').data('value');
+  var hostname = host + '.' + name;
+  if(hostname == curHostname) { if(cb != null) { cb(hostnameOk); } return; }
+  curHostname = hostname;
+  if(name == '') { if(cb != null) { cb(false); } setHostname(null); checkAllSelected(); return; }
+
+  $.post('/r/createServer/checkHostname/', {name: name, host: host }, function(ret)
+  {
+    if(ret === true) { setHostname(true); $('#hostnameFeedback').html('&nbsp;').css('visibility', 'hidden'); $('#finalError').hide(0); }
+    else { setHostname(false); $('#hostnameFeedback').text(ret).css('visibility', 'visible'); }
+    checkAllSelected();
+    if(cb != null) { cb(ret); }
+  },'json');
+
+}
+
+$('.selectHostname').click(function() {
+    var value = $(this).data('value');
+    $('#selectedHostname').data('value', value).text(value);
+    validateHostname();
+});
+
+
+function setHostname(set) {
+
+  $('#serverName').data('ok', (set === true ? 1 : 0));
+  hostnameOk = set;
+
+  if(set === true) {
+    $('#serverName, #selectHostnameBtn').css('borderColor', '#3c763d');
+    $('#hostnameTick').show(0);
+    $('#hostnameCross').hide(0);
+  }
+  else if(set === false) {
+    $('#serverName, #selectHostnameBtn').css('borderColor', '#a94442');
+    $('#hostnameTick').hide(0);
+    $('#hostnameCross').show(0);
+  }
+  else {
+    $('#serverName, #selectHostnameBtn').css('borderColor', '#d5d5d5');
+    $('#hostnameTick').hide(0);
+    $('#hostnameCross').hide(0);
+  }
+}
+
+$('.cbBox').click(function()
+{
+  var active = !$('#cbAutoRenew').hasClass('active');
+  $(this).toggleClass('active', active);
+
+  var price = creditsMap[selectedCycle][selectedMemory];
+  var cycleStr = selectedCycle.substring(0, selectedCycle.length - 2);
+  updatePriceInfo(price, active, cycleStr);
+});
+
+if(haveFree) { $('.partFree').click(function() { alert('You already have a free server. Select it at my servers.'); }); }
+
+$(document).ready(function(){ $('.feature').tooltip(); });
+
+</script></div></div>
+<style>
+.botBox { float:left; margin:60px 40px 20px 31px; color:#fff; }
+.botBox a { line-height:23px; }
+.botBox h4 { margin-bottom:8px; }
+</style>
+
+<div id="bot" style="height:230px;">
+<div style="width:940px;margin:0 auto;overflow:hidden;">
+
+  <div class="botBox">
+  <div style="margin-bottom:12px;"><a href="/"><img src="/s/img/logo.svg" style="width:230px;height:56px;" alt="Server.pro Logo"></a></div>
+  <div class="c">Copyright &copy; 2017 &ndash; 2017 HupinCraft</div>
+  </div>
+
+  <div class="botBox">
+  <h4>Сервера</h4>
+    <a href="https://hupincraft.000webhostapp.com/create-server.html">Создать сервер</a><br>
+  <a href="https://hupincraft.000webhostapp.com/pricing.html">Цены</a>
+  </div>
+
+  <div class="botBox">
+  <h4>Мой аккаунт</h4>
+    <a href="https://hupincraft.000webhostapp.com/signup.html">Регистрация</a><br>
+  <a href="https://hupincraft.000webhostapp.com/login.html">Войти</a><br>
+  <a href="/reset-password/">Сбросить пароль</a>
+    </div>
+
+  <div class="botBox">
+  <h4>Помощь</h4>
+  <a href="/contact/">Контакты</a><br>
+  <a href="/support/">F.A.Q</a><br>
+  <a href="https://hupincraft.000webhostapp.com/tutorials.html">Учебники</a>
+  </div>
+
+  <div class="botBox">
+  <h4>Компания</h4>
+  <a href="/about/">About</a><br>
+  <a href="/terms/">Terms of Service</a><br>
+  <a href="/jobs/">Jobs</a>
+  </div>
+</div>
+
+
+<div style="width:940px;margin:0 auto;color:#6b7c8a;">
+<div style="overflow:hidden;padding:3px 0;font-size:12px;font-weight:500px;margin-left:320px;">
+<div class="fl">Server Pro Sweden AB - SE556999789201</div>
+<div class="fr">Drottninggatan 29, 411 14 Gothenburg, Sweden - &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#114;&#118;&#101;&#114;&#46;&#112;&#114;&#111;</div>
+</div>
+<div style="border-top:1px solid #354b5f;overflow:hidden;padding-top:3px;font-size:12px;font-weight:500px;margin-left:320px;">
+Server.pro is not associated with Minecraft. Minecraft is the official trademark of Mojang AB.
+</div>
+</div>
+
+
+</div>
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-9450210-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = 'https://ssl.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+</body>
+</html>

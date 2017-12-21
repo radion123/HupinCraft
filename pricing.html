@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Server.pro | Free Minecraft Server Hosting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Free minecraft hosting to play with your friends. Get your own server in under a minute!" />
+<meta name="keywords" content="free minecraft servers, minecraft hosting, minecraft server, minecraft pe, minecraft pocket edition, rent minecraft server" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script src="/s/js/jquery-3.1.1.min.js"></script>
+<link href="/s/css/bootstrap-3.1.1.min.css" rel="stylesheet">
+<script src="/s/js/bootstrap-3.1.1.min.js"></script>
+<link href="/s/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/s/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<script>
+function esc(v) { if(v === null) return null; return v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+if (!Array.prototype.indexOf) { Array.prototype.indexOf = function(val) { return $.inArray(val, this); }; }
+if (!String.prototype.startsWith) { String.prototype.startsWith = function(searchString, position) { position = position || 0; return this.substr(position, searchString.length) === searchString; }; }
+var stateCredits = 0;
+</script>
+<div id="all">
+<div id="top" style="left:0;top:0;position:fixed;">
+<div style="margin:0 auto;padding:0 10px;max-width:1170px;overflow:visible;">
+<div class="fl"><a class="topLogo" href="/"><img src="/s/img/logo-dark.svg" style="width:180px;height:44px;padding-top:2px;"></a></div>
+<div class="fl topNav"><a href="/">Start</a><a href="/tutorials/">Tutorials</a><a class="active" href="/pricing/">Pricing</a><a href="/support/">Support</a></div>
+<div class="fr topNav"><a href="/signup/">Signup</a><a href="/login/">Login</a></div>
+</div>
+</div>
+<div style="margin:100px auto 30px auto;overflow:hidden;">
+
+<style>
+.pricingContainer { margin:2px -2px; color:#505050; overflow:hidden; }
+.pricing { width:180px; background-color:#fff; margin:0 3px 2px 3px; float:left; box-shadow:1px 1px 2px rgba(0, 0, 0, 0.08); transition:all 0.2s ease 0s; }
+.pricing.free { margin-right:17px; }
+
+.head { font-size:41px; font-weight:600; text-align:center; padding:15px 0 5px 0; cursor:default; }
+.head .dollar, .head .period { display:inline-block; font-size:22px; font-weight:300; }
+.head .period { padding-left:4px; }
+.head .dollar { position:relative; top:-11px; padding-right:2px; }
+
+.free .head { border-top:5px solid #a0d468; }
+.prem .head { border-top:5px solid #ffce54; }
+
+.box { padding:8px 0; font-size:18px; text-align:center; cursor:default; }
+.featuresContainer { margin:20px -2px; color:#505050; overflow:hidden; }
+.features { background-color:#fff; margin:0 3px; float:left; box-shadow:1px 1px 2px rgba(0, 0, 0, 0.08); border-radius:4px; }
+.featuresFree { width:400px; margin-right:17px; }
+.featuresPrem { width:518px; }
+.feature { text-align:center; font-size:18px; border-bottom:1px solid #e5e5e5; padding:20px 10px; }
+.featureHead { font-weight:600; cursor:default; color:#fff !important; padding:10px 0; font-size:18px; border-radius:4px 4px 0 0; box-shadow:0 0 3px rgba(0, 0, 0, 0.08); text-align:center; }
+.featuresFree .featureHead { background-color:#a0d468; }
+.featuresPrem .featureHead { background-color:#ffce54; }
+
+.foot { display:block; font-weight:600; color:#fff !important; padding:10px 0; font-size:18px; cursor:pointer; text-decoration:none !important; border-radius:0 0 4px 4px; box-shadow:0 0 3px rgba(0, 0, 0, 0.08); text-align:center; }
+.featuresFree .foot { background-color:#a0d468; }
+.featuresPrem .foot { background-color:#ffce54; }
+.featureSub { font-size:14px; }
+
+.switchContainer { overflow:hidden; font-size:22px; text-align:center; padding:5px 0 30px 0; width:700px; margin:0 auto; }
+
+.switch { overflow:hidden; background-color:#fdfdfd; width:200px; border-radius:5px; margin:10px auto; border:1px solid #e5e5e5; box-shadow:1px 1px 2px rgba(0, 0, 0, 0.08); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.switch .fl, .switch .fr { padding:6px 15px; cursor:pointer; transition:all 0.4s ease 0s; }
+.switch .active { background-color:#448CCB; color:#fff; box-shadow:inset 4px 4px 6px rgba(0, 0, 0, 0.1); }
+.priceNote { float:left; text-align:right; line-height:65px; font-size:14px; }
+.priceNoteRight { float:right; text-align:left; line-height:65px; font-size:14px; }
+.footNote { text-align:center; padding-top:10px; }
+.priceCredits { font-size:14px; font-weight:300; text-align:center; }
+
+.priceHourlyBox { display:none; }
+.switchDesc { float:left; line-height:65px; margin-right:10px; }
+
+</style>
+
+<div class="c940">
+<h1 style="margin-bottom:10px;">Pricing</h1>
+<div class="switchContainer">
+<div style="margin-bottom:20px;">Simple prices without hidden fees</div>
+<div style="overflow:hidden;margin-bottom:20px;">
+<div class="priceNote text-muted" style="width:200px;">PC Edition</div>
+<div class="priceNoteRight text-muted" style="width:200px;">Pocket Edition</div>
+<div style="margin:0 200px;">
+<div class="switch" style="width:268px;">
+<div id="gameMinecraft" class="fl active">Minecraft</div>
+<div id="gameMinecraftPE" class="fr">Minecraft PE</div>
+</div>
+</div>
+</div>
+
+<div style="overflow:hidden;margin-bottom:20px;">
+<div class="priceNote text-muted" style="width:236px;"><span class="priceDescMC">$ 5 per GB of memory and month</span><span class="priceDescMCPE" style="display:none;" >$ 0.5 per player slot and month</span></div>
+<div class="priceNoteRight text-muted" style="width:233px;"><span class="priceDescMC">$ 0.1 per GB of memory and hour</span><span class="priceDescMCPE" style="display:none;">$ 0.01 per player slot and hour</span></div>
+<div style="margin:0 250px;">
+<div class="switch">
+<div id="priceMonthly" class="fl active">Monthly</div>
+<div id="priceHourly" class="fr">Hourly</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="wrapMinecraft">
+
+<div class="pricingContainer">
+  <div class="pricing free">
+  <div class="head">
+  Free
+  <div class="priceCredits text-muted">Free Forever</div>
+  </div>
+  <div class="box"><b>0.5 GB</b> Memory</div>
+  <div class="box" style="padding-bottom:15px;"><b>5</b> GB SSD Disk</div>
+  </div>
+
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>5<div class="period">/ month</div><div class="priceCredits text-muted">50 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.1<div class="period">/ hour</div><div class="priceCredits text-muted">1 Credit / hour</div></div>
+  </div>
+  <div class="box"><b>1 GB</b> Memory</div>
+  <div class="box" style="padding-bottom:15px;"><b>10 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>10<div class="period">/ month</div><div class="priceCredits text-muted">100 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.2<div class="period">/ hour</div><div class="priceCredits text-muted">2 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>2 GB</b> Memory</div>
+  <div class="box" style="padding-bottom:15px;"><b>20 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>20<div class="period">/ month</div><div class="priceCredits text-muted">200 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.4<div class="period">/ hour</div><div class="priceCredits text-muted">4 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>4 GB</b> Memory</div>
+  <div class="box" style="padding-bottom:15px;"><b>40 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>40<div class="period">/ month</div><div class="priceCredits text-muted">400 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.8<div class="period">/ hour</div><div class="priceCredits text-muted">8 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>8 GB</b> Memory</div>
+  <div class="box" style="padding-bottom:15px;"><b>80 GB</b> SSD Disk</div>
+  </div>
+  </div>
+
+<div class="featuresContainer">
+    <div class="features featuresFree">
+    <div class="featureHead">Free Features</div>
+     <div class="feature">12 Players<div class="featureSub text-muted">Free servers are limited to a maximum of 12 players.</div></div>  <div class="feature">10 Plugins<div class="featureSub text-muted">Install up to 10 plugins.</div></div>  <div class="feature">2 Core Processor<div class="featureSub text-muted">More than enough processing power to get you started.</div></div>  <div class="feature">Queue at peak hours<div class="featureSub text-muted">When demand is high you might have to wait a few minutes before your server starts.</div></div>     <a href="/signup/" class="foot">Signup</a>    </div>
+
+    <div class="features featuresPrem">
+    <div class="featureHead">Premium Features</div>
+     <div class="feature">Unlimited Players<div class="featureSub text-muted">We won't limit the amount of players. Have as many as you like.</div></div>  <div class="feature">Unlimited Plugins<div class="featureSub text-muted">Install as many plugins as you like. Please note that more plugins require more memory.</div></div>  <div class="feature">4 Core Processor<div class="featureSub text-muted">Double the processing power.</div></div>  <div class="feature">Instant Setup<div class="featureSub text-muted">Your server will literally be up and running within seconds.</div></div>  <div class="feature">No Advertisement<div class="featureSub text-muted">No branding or advertisement what so ever.</div></div>  <div class="feature">Premium Support<div class="featureSub text-muted">We will help you with whatever problems that might occur. Including mod installation and configuration.</div></div>  <div class="feature">Daily Backups<div class="featureSub text-muted">We know your data is important so your server is automatically backed up daily.</div></div>  <div class="feature">Modpack Support<div class="featureSub text-muted">We offer auto installable modpacks just a few clicks away. Please note that more mods require more memory.</div></div>  <div class="feature">Custom JAR<div class="featureSub text-muted">You can upload and use your own JAR file so you can run exactly what you want.</div></div>  <div class="feature">Extra Ports<div class="featureSub text-muted">All premium servers comes with extra ports for plugins or mods that require it.</div></div>  <div class="feature">Multi Admin<div class="featureSub text-muted">Share your server with other users without sharing your account details.</div></div>     <a href="/signup/" class="foot">Signup</a>    </div>
+</div>
+
+<div class="text-muted footNote">All prices are shown in USD and include VAT where applicable. 1 USD = 10 Credits.</div>
+
+</div>
+
+<div id="wrapMinecraftPE" style="display:none;">
+
+<div class="pricingContainer">
+  <div class="pricing free">
+  <div class="head">
+  Free
+  <div class="priceCredits text-muted">Free Forever</div>
+  </div>
+  <div class="box"><b>5</b> Player Slots</div>
+  <div class="box" style="padding-bottom:15px;"><b>5</b> GB SSD Disk</div>
+  </div>
+
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>5<div class="period">/ month</div><div class="priceCredits text-muted">50 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.1<div class="period">/ hour</div><div class="priceCredits text-muted">1 Credit / hour</div></div>
+  </div>
+  <div class="box"><b>10</b> Player Slots</div>
+  <div class="box" style="padding-bottom:15px;"><b>10 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>10<div class="period">/ month</div><div class="priceCredits text-muted">100 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.2<div class="period">/ hour</div><div class="priceCredits text-muted">2 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>20</b> Player Slots</div>
+  <div class="box" style="padding-bottom:15px;"><b>20 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>20<div class="period">/ month</div><div class="priceCredits text-muted">200 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.4<div class="period">/ hour</div><div class="priceCredits text-muted">4 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>40</b> Player Slots</div>
+  <div class="box" style="padding-bottom:15px;"><b>40 GB</b> SSD Disk</div>
+  </div>
+    <div class="pricing prem">
+  <div class="head">
+    <div class="priceMonthlyBox"><div class="dollar">$</div>40<div class="period">/ month</div><div class="priceCredits text-muted">400 Credits / month</div></div>
+    <div class="priceHourlyBox"><div class="dollar">$</div>0.8<div class="period">/ hour</div><div class="priceCredits text-muted">8 Credits / hour</div></div>
+  </div>
+  <div class="box"><b>80</b> Player Slots</div>
+  <div class="box" style="padding-bottom:15px;"><b>80 GB</b> SSD Disk</div>
+  </div>
+  </div>
+
+<div class="featuresContainer">
+    <div class="features featuresFree">
+    <div class="featureHead">Free Features</div>
+     <div class="feature">5 Players<div class="featureSub text-muted">Free servers are limited to a maximum of 5 players.</div></div>  <div class="feature">10 Plugins<div class="featureSub text-muted">Install up to 10 plugins.</div></div>  <div class="feature">2 Core Processor<div class="featureSub text-muted">More than enough processing power to get you started.</div></div>  <div class="feature">Queue at peak hours<div class="featureSub text-muted">When demand is high you might have to wait a few minutes before your server starts.</div></div>     <a href="/signup/" class="foot">Signup</a>    </div>
+
+    <div class="features featuresPrem">
+    <div class="featureHead">Premium Features</div>
+     <div class="feature">More Players<div class="featureSub text-muted">You can have up to a maximum of 80 players.</div></div>  <div class="feature">Unlimited Plugins<div class="featureSub text-muted">Install as many plugins as you like.</div></div>  <div class="feature">4 Core Processor<div class="featureSub text-muted">Double the processing power.</div></div>  <div class="feature">Instant Setup<div class="featureSub text-muted">Your server will literally be up and running within seconds.</div></div>  <div class="feature">No Advertisement<div class="featureSub text-muted">No branding or advertisement what so ever.</div></div>  <div class="feature">Premium Support<div class="featureSub text-muted">We will help you with whatever problems that might occur. Including mod installation and configuration.</div></div>  <div class="feature">Daily Backups<div class="featureSub text-muted">We know your data is important so your server is automatically backed up daily.</div></div>  <div class="feature">Multi Admin<div class="featureSub text-muted">Share your server with other users without sharing your account details.</div></div>     <a href="/signup/" class="foot">Signup</a>    </div>
+</div>
+
+<div class="text-muted footNote">All prices are shown in USD and include VAT where applicable. 1 USD = 10 Credits.</div>
+
+</div>
+
+<script>
+
+$('#gameMinecraft').click(function()
+{
+  $(this).addClass('active');
+  $('#gameMinecraftPE').removeClass('active');
+  $('#wrapMinecraftPE').hide(0);
+  $('#wrapMinecraft').show(0);
+  $('.priceDescMCPE').hide(0);
+  $('.priceDescMC').show(0);
+});
+
+$('#gameMinecraftPE').click(function()
+{
+  $(this).addClass('active');
+  $('#gameMinecraft').removeClass('active');
+  $('#wrapMinecraft').hide(0);
+  $('#wrapMinecraftPE').show(0);
+  $('.priceDescMC').hide(0);
+  $('.priceDescMCPE').show(0);
+});
+
+$('#priceMonthly').click(function()
+{
+  $(this).addClass('active');
+  $('#priceHourly').removeClass('active');
+  $('.priceHourlyBox').hide(0);
+  $('.priceMonthlyBox').show(0);
+});
+
+$('#priceHourly').click(function()
+{
+  $(this).addClass('active');
+  $('#priceMonthly').removeClass('active');
+  $('.priceMonthlyBox').hide(0);
+  $('.priceHourlyBox').show(0);
+});
+
+</script></div></div>
+<style>
+.botBox { float:left; margin:60px 40px 20px 31px; color:#fff; }
+.botBox a { line-height:23px; }
+.botBox h4 { margin-bottom:8px; }
+</style>
+
+<div id="bot" style="height:230px;">
+<div style="width:940px;margin:0 auto;overflow:hidden;">
+
+  <div class="botBox">
+  <div style="margin-bottom:12px;"><a href="/"><img src="/s/img/logo.svg" style="width:230px;height:56px;" alt="Server.pro Logo"></a></div>
+  <div class="c">Copyright &copy; 2013 &ndash; 2017 Server.pro</div>
+  </div>
+
+  <div class="botBox">
+  <h4>Servers</h4>
+    <a href="/create-server/">Create Server</a><br>
+  <a href="/pricing/">Pricing</a>
+  </div>
+
+  <div class="botBox">
+  <h4>My Account</h4>
+    <a href="/signup/">Signup</a><br>
+  <a href="/login/">Login</a><br>
+  <a href="/reset-password/">Forgot Password</a>
+    </div>
+
+  <div class="botBox">
+  <h4>Help</h4>
+  <a href="/contact/">Contact</a><br>
+  <a href="/support/">F.A.Q</a><br>
+  <a href="/tutorials/">Tutorials</a>
+  </div>
+
+  <div class="botBox">
+  <h4>Company</h4>
+  <a href="/about/">About</a><br>
+  <a href="/terms/">Terms of Service</a><br>
+  <a href="/jobs/">Jobs</a>
+  </div>
+</div>
+
+
+<div style="width:940px;margin:0 auto;color:#6b7c8a;">
+<div style="overflow:hidden;padding:3px 0;font-size:12px;font-weight:500px;margin-left:320px;">
+<div class="fl">Server Pro Sweden AB - SE556999789201</div>
+<div class="fr">Drottninggatan 29, 411 14 Gothenburg, Sweden - &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#114;&#118;&#101;&#114;&#46;&#112;&#114;&#111;</div>
+</div>
+<div style="border-top:1px solid #354b5f;overflow:hidden;padding-top:3px;font-size:12px;font-weight:500px;margin-left:320px;">
+Server.pro is not associated with Minecraft. Minecraft is the official trademark of Mojang AB.
+</div>
+</div>
+
+
+</div>
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-9450210-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = 'https://ssl.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+</body>
+</html>

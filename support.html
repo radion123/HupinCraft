@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Server.pro | Free Minecraft Server Hosting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Free minecraft hosting to play with your friends. Get your own server in under a minute!" />
+<meta name="keywords" content="free minecraft servers, minecraft hosting, minecraft server, minecraft pe, minecraft pocket edition, rent minecraft server" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script src="/s/js/jquery-3.1.1.min.js"></script>
+<link href="/s/css/bootstrap-3.1.1.min.css" rel="stylesheet">
+<script src="/s/js/bootstrap-3.1.1.min.js"></script>
+<link href="/s/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/s/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<script>
+function esc(v) { if(v === null) return null; return v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+if (!Array.prototype.indexOf) { Array.prototype.indexOf = function(val) { return $.inArray(val, this); }; }
+if (!String.prototype.startsWith) { String.prototype.startsWith = function(searchString, position) { position = position || 0; return this.substr(position, searchString.length) === searchString; }; }
+var stateCredits = 0;
+</script>
+<div id="all">
+<div id="top" style="left:0;top:0;position:fixed;">
+<div style="margin:0 auto;padding:0 10px;max-width:1170px;overflow:visible;">
+<div class="fl"><a class="topLogo" href="/"><img src="/s/img/logo-dark.svg" style="width:180px;height:44px;padding-top:2px;"></a></div>
+<div class="fl topNav"><a href="/">Start</a><a href="/tutorials/">Tutorials</a><a href="/pricing/">Pricing</a><a class="active" href="/support/">Support</a></div>
+<div class="fr topNav"><a href="/signup/">Signup</a><a href="/login/">Login</a></div>
+</div>
+</div>
+<div style="margin:100px auto 30px auto;overflow:hidden;">
+<style>
+#supportQuestions .row { text-align: center; margin-bottom:70px; }
+#supportQuestions a { padding:3px 0 3px 0; margin:0; display:block; cursor:pointer; }
+#supportAnswer { width:730px; margin:0 auto; display:none; height:374px; text-align: center; padding-top:20px; }
+#supportAnswerText { padding:20px; }
+</style>
+
+<div class="c940">
+<h1>Support</h1>
+<p class="subHeader" style="margin:10px 0 60px 0;font-size:16px;">Below are some of the most commonly asked questions. More questions and answers will be added soon!</p>
+
+<div id="supportQuestions">
+<div class="row">
+  <div class="col-xs-6">
+  <h3>General Questions</h3>
+  <a data-answer="We provide free and premium game servers all around the world.<br>The premium servers cover the costs of the free servers.">How does this work? How can this be free?</a>
+  <a data-answer="Premium servers can setup auto renew to automatically renew your server for you for as long as you have credits. Free servers will have to manually renew the time. You can upgrade your memory at my servers.">How can I get more time or memory on my server?</a>
+  <a data-answer="If you have youtube channel with at least 50.000 subscribers message us and we will work out a deal.">Can you sponsor my youtube channel?</a>
+  </div>
+
+  <div class="col-xs-6">
+  <h3>Server Issues</h3>
+  <a data-answer="If you are running vanilla minecraft you can enable whitelist to only let people you know in. If you are running a modded server you can install a permission plugin such as AuthMe. Please note that turning off online mode will enable hackers to connect as anyone they want.">Someone is hacking / griefing my minecraft server</a>
+  <a data-answer="This could be caused by multiple things. Most commonly there is a configuration error or a plugin that's behaving badly. It's also possible that you use more plugins or mods than your server memory can handle. Checking the server logs will often tell you whats wrong. You can also try to remove one plugin at a time until you find the one that is causing the crashes. If you cannot find out whats causing your server to crash don't hesitate to contact us.">My server won't start or crashes when I play</a>
+  <a data-answer="Make sure your server is up and running and that you are using the correct IP address. The IP address changes every time you resume your server.<br><br>Make sure you run the same minecraft version as your server. If you are using modpacks you need to have the mods installed on your computer too.<br><br>Try connecting with the IP address as the hostnames can sometimes take awhile to start working.<br><br>If you are using a cracked minecraft client you need to disable online mode at configuration at your control panel.">I can't connect to my server</a>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+  <h3>Minecraft</h3>
+  <a data-answer="Yes! You can come back and play where you left off any time you like. Please note that if your server is inactive for 6 months (1 month for free servers) your server data will be removed to free up space for other users.">Are my worlds and files saved after my server expires?</a>
+  <a data-answer="Yes, turning off online mode will allow any copy of minecraft to connect. Please note that disabling online mode will also make your server less secure against hackers as they can connect with any username.">I have a cracked (pirated) minecraft, can I play on your servers?</a>
+  <a data-answer="Servers are running Java 7 per default but can be changed to run Java 8 at the reinstall tab in your control panel.">What Java version do you use?</a>
+  </div>
+
+  <div class="col-xs-6">
+  <h3>Account Issues</h3>
+  <a data-answer="You can reset your account password <a href='/reset-password/'>here</a>. If this doesn't solve your problem don't hesitate to contact us.">I can't login to my account</a>
+  </div>
+</div>
+</div>
+<div id="supportAnswer"><div class="abox"><div class="top"></div><div id="supportAnswerText"></div></div><button id="supportBackBtn" class="btn btn-success btn-lg" style="width:300px;">Go Back</button></div>
+
+<h2 class="c" style="padding-top:10px;">Cannot find what you are looking for?</h2>
+<div style="width:400px;margin:40px auto 0 auto;">
+<a href="/contact/" class="btn btn-success btn-big" style="width:100%;">Message Us</a>
+</div>
+</div>
+
+<script>
+
+$('#supportQuestions a').click(function()
+{
+  var clickedQuestion = this;
+  $('#supportQuestions').fadeOut(200, function() {
+    $('#supportAnswerText').html($(clickedQuestion).data('answer'));
+    $('#supportAnswer .top').html($(clickedQuestion).text());
+    $('#supportAnswer').fadeIn(200);
+  });
+});
+
+$('#supportBackBtn').click(function() {
+
+  $('#supportAnswer').fadeOut(200, function() {
+    $('#supportQuestions').fadeIn(200);
+  });
+});
+
+</script>
+</div></div>
+<style>
+.botBox { float:left; margin:60px 40px 20px 31px; color:#fff; }
+.botBox a { line-height:23px; }
+.botBox h4 { margin-bottom:8px; }
+</style>
+
+<div id="bot" style="height:230px;">
+<div style="width:940px;margin:0 auto;overflow:hidden;">
+
+  <div class="botBox">
+  <div style="margin-bottom:12px;"><a href="/"><img src="/s/img/logo.svg" style="width:230px;height:56px;" alt="Server.pro Logo"></a></div>
+  <div class="c">Copyright &copy; 2013 &ndash; 2017 Server.pro</div>
+  </div>
+
+  <div class="botBox">
+  <h4>Servers</h4>
+    <a href="/create-server/">Create Server</a><br>
+  <a href="/pricing/">Pricing</a>
+  </div>
+
+  <div class="botBox">
+  <h4>My Account</h4>
+    <a href="/signup/">Signup</a><br>
+  <a href="/login/">Login</a><br>
+  <a href="/reset-password/">Forgot Password</a>
+    </div>
+
+  <div class="botBox">
+  <h4>Help</h4>
+  <a href="/contact/">Contact</a><br>
+  <a href="/support/">F.A.Q</a><br>
+  <a href="/tutorials/">Tutorials</a>
+  </div>
+
+  <div class="botBox">
+  <h4>Company</h4>
+  <a href="/about/">About</a><br>
+  <a href="/terms/">Terms of Service</a><br>
+  <a href="/jobs/">Jobs</a>
+  </div>
+</div>
+
+
+<div style="width:940px;margin:0 auto;color:#6b7c8a;">
+<div style="overflow:hidden;padding:3px 0;font-size:12px;font-weight:500px;margin-left:320px;">
+<div class="fl">Server Pro Sweden AB - SE556999789201</div>
+<div class="fr">Drottninggatan 29, 411 14 Gothenburg, Sweden - &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#114;&#118;&#101;&#114;&#46;&#112;&#114;&#111;</div>
+</div>
+<div style="border-top:1px solid #354b5f;overflow:hidden;padding-top:3px;font-size:12px;font-weight:500px;margin-left:320px;">
+Server.pro is not associated with Minecraft. Minecraft is the official trademark of Mojang AB.
+</div>
+</div>
+
+
+</div>
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-9450210-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = 'https://ssl.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+</body>
+</html>
